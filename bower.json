@@ -1,0 +1,14 @@
+{
+  "name": "visa-redesign",
+  "version": "0.0.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "sass-bootstrap": "~3.0.0",
+    "requirejs": "~2.1.9",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.10.2",
+    "backbone-amd": "~1.1.0",
+    "bronson": "~2.0.7"
+  }
+}
