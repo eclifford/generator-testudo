@@ -22,8 +22,8 @@ module.exports =
       livereload: '<%= connect.options.livereload %>'
 
     files: [
-      '<%= options.basePath %>/*.html'
-      '<%= options.tempDir %>/styles/{,*/}*.css'
-      '{.tmp,<%= options.basePath %>}/scripts/{,*/}*.js'
+      '<%= options.basePath %>/**/*.html'
+      '<%= options.tempDir %>/**/*.css'
+      '<%= options.tempDir %>}/**/*.js'
       # '<%= options.basePath %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
     ]

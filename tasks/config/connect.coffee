@@ -15,8 +15,8 @@ module.exports =
     options:
       open: true
       base: [
-        '<%= options.tempDir %>'
         '<%= options.basePath %>'
+        '<%= options.tempDir %>'
       ]
 
   dist: 

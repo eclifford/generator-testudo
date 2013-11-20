@@ -9,7 +9,7 @@ module.exports =
     files: [
       '.tmp/common.js'
       '.tmp/common/test/runner.js'
-      {pattern: '.tmp/**/*.{js,tmpl,json}', included: false}
+      {pattern: '.tmp/**/*.{js,tmpl,json,html}', included: false}
     ]
 
     frameworks: [

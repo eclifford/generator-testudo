@@ -5,9 +5,10 @@
 # @author Eric Clifford
 #
 module.exports = 
-  server: [
+  dev: [
     'compass'
     'coffee'
+    'copy:assets'
   ]
 
 

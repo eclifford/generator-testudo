@@ -8,6 +8,6 @@ module.exports =
   dev:
     expand: true
     cwd: "<%= options.basePath %>"
-    src: "**/*.coffee"
+    src: ["**/*.coffee", "!**/vendor/**/*.coffee"]
     dest: "<%= options.tempDir %>"
     ext: ".js"

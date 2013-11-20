@@ -30,7 +30,7 @@
     "grunt-coffeelint": "0.0.7",
     "karma-sinon-chai": "~0.1.1",
     "karma-chai-jquery": "~0.1.0",
-    "grunt-contrib-symlink": "~0.2.0"
+    "grunt-contrib-symlink": "git://github.com/eclifford/grunt-contrib-symlink.git#0abb4a707532b93d3f8d17beb40b8c3bd501433e"
   },
   "engines": {
     "node": ">=0.8.0"

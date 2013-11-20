@@ -12,7 +12,7 @@ module.exports =
     imagesDir: '<%= options.basePath %>/images'
     javascriptsDir: '<%= options.basePath %>/scripts'
     fontsDir: '<%= options.basePath %>/styles/fonts'
-    importPath: '<%= options.basePath %>/vendor/bower_components'
+    importPath: '<%= options.basePath %>'
     httpImagesPath: '/images'
     httpGeneratedImagesPath: '/images/generated'
     httpFontsPath: '/styles/fonts'

@@ -6,41 +6,52 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>visa redesign</title>
+        <title>Testudo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="/main.css">
-        <!-- endbuild -->
-        <!-- build:js scripts/vendor/modernizr.js -->
         <script src="/vendor/bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-        <!-- build:js scripts/main.js -->
-        <script src="/vendor/bower_components/requirejs/require.js"></script>
-        <script src="/common.js"></script>
-        <!-- endbuild -->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     </head>
     <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-
+      <div class="jumbotron">
         <div class="container">
-
+          <h1>Testudo</h1>
+          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <p><a class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
         </div>
+      </div>
+ 
+      <div class="container">
+      <div id="map">
+      
+      </div>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+      </div>
+    
 
-        <script>
-        require(['bronson'], function(Bronson) {
-            Bronson.load(
-              [
-                {'modules/moduleA/main': {autostart: false, data: {el: '.container'}}},
-                {'modules/moduleA/main': {autostart: false, data: {el: '.container'}}}
-              ]
-            );
-        });
-        </script>
+      <hr>
+
+      <footer>
+        <p>© Company 2013</p>
+      </footer>
+    </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -50,7 +61,8 @@
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
-
         </script>
+
+        <script data-main="main" src="vendor/bower_components/requirejs/require.js"></script>
 </body>
 </html>

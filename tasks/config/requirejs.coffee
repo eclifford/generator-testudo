@@ -10,13 +10,16 @@ module.exports =
     options:
       # appDir: '<%= options.tempDir %>'
       baseUrl: '<%= options.tempDir %>'
-      mainConfigFile: "<%= options.tempDir %>/main.js"
+      mainConfigFile: "<%= options.tempDir %>/common.js"
+      fileExclusionRegExp: new RegExp("modules/.*/[0-9A-Za-z]*Spec.js")
       dir: "<%= options.buildDir %>"
-      removeCombined: true
+      skipDirOptimize: true
+      optimizeCss: 'none'
+      removeCombined: false
       preserveLicenseComments: false
       useStrict: true
       optimize: "uglify2"
-      findNestedDependencies: true 
+      findNestedDependencies: true
       wrap: true
 
       # AMD Modules

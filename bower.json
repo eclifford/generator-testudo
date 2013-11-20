@@ -10,6 +10,7 @@
     "backbone-amd": "~1.1.0",
     "bronson": "~2.0.7",
     "underscore": "~1.5.2",
-    "underscore-amd": "~1.5.2"
+    "underscore-amd": "~1.5.2",
+    "requirejs-text": "~2.0.10"
   }
 }

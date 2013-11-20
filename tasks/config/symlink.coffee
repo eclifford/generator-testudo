@@ -5,6 +5,9 @@
 # @author Eric Clifford
 #
 module.exports = 
+  options:
+    overwrite: true
+
   expanded: 
     files: [
       expand: true

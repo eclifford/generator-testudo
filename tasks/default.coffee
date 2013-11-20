@@ -7,8 +7,9 @@
 module.exports = (grunt) ->
   grunt.registerTask 'default', 
   [
+    'clean'
+    'concurrent:dev'
     'symlink'
-    'concurrent:server'
     'connect:livereload'
     'karma:unit:start'
     'watch'

@@ -14,7 +14,7 @@ module.exports = (grunt) ->
       tempDir: '.tmp'
 
   # Load options
-  grunt.util._.merge(config, loadConfig('./tasks/options/'))
+  grunt.util._.merge(config, loadConfig('./tasks/config/'))
 
   # Initialize Grunt
   grunt.initConfig(config)
