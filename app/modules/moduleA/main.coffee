@@ -3,17 +3,21 @@
 #
 # @author Eric Clifford
 #
-define ['jquery', 'bronson'], ($, Bronson) ->
+define [
+  'jquery'
+  'bronson'
+  'modules/moduleA/views/mainView'
+], ($, Bronson, MainView) ->
   class ModuleA extends Bronson.Module
     constructor: (data) ->
       this.data = data
 
     onLoad: ->
-      console.log('load')
-      $('h1').text("ModuleA Loaded")
+      @view = new MainView()
+      $(@data.el).append(@view.render())
 
     onStart: ->
-      $("h1").text("ModuleA Started")
+      @view.$el.addClass('started')
 
     onStop: ->
       console.log('stop')

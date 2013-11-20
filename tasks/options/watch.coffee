@@ -4,20 +4,20 @@
 #
 # @author Eric Clifford
 #
-module.exports = 
-  options : 
+module.exports =
+  options :
     spawn: false
     debounceDelay: 250
 
-  coffee: 
+  coffee:
     files: ['**/*.coffee', '!vendor/**/*']
     tasks: ['coffeelint', 'coffee:dev', 'karma:unit:run']
 
-  compass: 
-    files: ['<%= options.basePath %>/styles/{,*/}*.{scss,sass}', '!vendor/**/*'],
+  compass:
+    files: ['<%= options.basePath %>/**/*.{scss,sass}', '!vendor/**/*'],
     tasks: ['compass:server']
 
-  livereload: 
+  livereload:
     options:
       livereload: '<%= connect.options.livereload %>'
 

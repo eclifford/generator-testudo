@@ -28,25 +28,17 @@
 
 
         <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <h3 class="text-muted">visa redesign</h3>
-            </div>
 
-            <div class="jumbotron">
-                <h1>Visa Redesign</h1>
-                <p class="lead">Lead text</p>
-                <p><a class="btn btn-lg btn-success" href="#">Success!</a></p>
-            </div>
         </div>
 
         <script>
         require(['bronson'], function(Bronson) {
-            Bronson.load([{'modules/moduleA/main': {autostart: false}}]);
+            Bronson.load(
+              [
+                {'modules/moduleA/main': {autostart: false, data: {el: '.container'}}},
+                {'modules/moduleA/main': {autostart: false, data: {el: '.container'}}}
+              ]
+            );
         });
         </script>
 
