@@ -1,5 +1,7 @@
 # Testudo
 
+![Testudo](http://gb.fotolibra.com/images/previews/50037-roman-soldiers-in-testudo-formation-illustration.jpeg)
+
 Testudo is a modern web application boilerplate with first class support applications that are modular and testable. 
 
 ## Key Features
