@@ -8,6 +8,12 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
     "bronson": "~2.0.7",
-    "requirejs-text": "~2.0.10"
+    "requirejs-text": "~2.0.10",
+    "gmaps": "~0.4.8",
+    "marionette": "~1.2.3",
+    "backbone-amd": "~1.1.0",
+    "underscore-amd": "~1.5.2",
+    "backbone.wreqr": "~0.2.0",
+    "backbone.babysitter": "~0.0.6"
   }
 }

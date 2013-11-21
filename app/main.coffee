@@ -8,8 +8,15 @@ require ['common'], (common) ->
     "use strict"
 
     Bronson.load [
-      'modules/moduleA/main':
+      'modules/gmaps/main':
         autostart: true
         data:
-          el: '#content'
+          el: '#maps'
+    ]
+
+    Bronson.load [
+      'modules/instagram/main':
+        autostart: true
+        data:
+          el: '#photos'
     ]
