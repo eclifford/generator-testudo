@@ -7,7 +7,6 @@
 module.exports =
   options :
     spawn: false
-    debounceDelay: 250
     livereload: '<%= connect.options.livereload %>'
 
   coffee:
@@ -17,3 +16,6 @@ module.exports =
   sass:
     files: ['<%= options.basePath %>/**/*.{scss,sass}', '!vendor/**/*'],
     tasks: ['sass:dev']
+
+  assets:
+    files: ['<%= options.basePath %>/**/*.html', '!vendor/**/*']
