@@ -3,21 +3,18 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import 'vendor/bower_components/sass-bootstrap/lib/bootstrap';
 @import 'modules/moduleA/main';
 
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Coda', cursive;
+}
+
 body {
-  color: white;
+  color: black;
   background-color: #333;
 }
 
 .jumbotron {
-  background-color: rgb(200,52,33);  
-  padding-bottom: 0px;
-}
-
-#map {
-  height: 300px;
-}
-
-.navbar {
-  background-color: rgb(200,52,33);   
   color: white;
+  background-color: rgb(200,52,33);  
 }
+

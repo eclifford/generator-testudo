@@ -8,22 +8,12 @@ module.exports =
   options :
     spawn: false
     debounceDelay: 250
+    livereload: '<%= connect.options.livereload %>'
 
   coffee:
     files: ['**/*.coffee', '!vendor/**/*']
     tasks: ['coffeelint', 'coffee:dev', 'karma:unit:run']
 
-  compass:
+  sass:
     files: ['<%= options.basePath %>/**/*.{scss,sass}', '!vendor/**/*'],
-    tasks: ['compass:server']
-
-  livereload:
-    options:
-      livereload: '<%= connect.options.livereload %>'
-
-    files: [
-      '<%= options.basePath %>/**/*.html'
-      '<%= options.tempDir %>/**/*.css'
-      '<%= options.tempDir %>}/**/*.js'
-      # '<%= options.basePath %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-    ]
+    tasks: ['sass:dev']

@@ -8,23 +8,8 @@ require ['common'], (common) ->
     "use strict"
 
     Bronson.load [
-      'modules/map/main':
+      'modules/moduleA/main':
         autostart: true
+        data:
+          el: '#content'
     ]
-
-    # Bronson.load [
-    #   'modules/moduleA/main':
-    #     autostart: true
-    #     data:
-    #       el: '.container'
-    # ,
-    #   'modules/moduleA/main':
-    #     autostart: false
-    #     data:
-    #       el: '.container'
-    # ,
-    #   'modules/moduleA/main':
-    #     autostart: false
-    #     data:
-    #       el: '.container'
-    # ]

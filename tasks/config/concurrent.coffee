@@ -6,7 +6,7 @@
 #
 module.exports = 
   dev: [
-    'compass'
+    'sass'
     'coffee'
     'copy:assets'
   ]

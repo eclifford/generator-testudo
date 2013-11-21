@@ -6,28 +6,25 @@
 define [
   'jquery'
   'bronson'
-  'modules/moduleA/views/mainView'
 ], ($, Bronson, MainView) ->
   class ModuleA extends Bronson.Module
     constructor: (data) ->
-      this.data = data
+      @data = data
 
     onLoad: ->
-      @view = new MainView()
-      $(@data.el).append(@view.render())
+      $(@data.el).append(
+        "<div class='panel panel-default'>
+          <div class='panel-body'>
+            ModuleA loaded
+          </div>
+        </div>"
+      )
 
     onStart: ->
-      @view.$el.addClass('started')
+      $('.panel-body', @data.el).html('ModuleA started')
 
     onStop: ->
-      console.log('stop')
+      $('.panel-body', @data.el).html('ModuleA stopped')
 
     onUnload: ->
-      console.log('unload')
-
-    add: (n1, n2) ->
-      return n1 + n2
-
-
-
-
+      $('.panel-body', @data.el).empty()
