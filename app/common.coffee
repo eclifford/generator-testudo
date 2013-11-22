@@ -19,6 +19,7 @@ require.config
     bootstrap: "vendor/bower_components/sass-bootstrap/js/"
     jquery: "vendor/bower_components/jquery/jquery"
     text: "vendor/bower_components/requirejs-text/text"
+    tpl: "vendor/bower_components/requirejs-tpl/tpl"
 
   shim:
     bootstrap:
