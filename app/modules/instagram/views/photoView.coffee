@@ -1,9 +1,9 @@
 define [
   'marionette'
-  'text!modules/instagram/templates/photoTemplate.tmpl'
+  'text!modules/instagram/templates/photoTemplate.html'
 ], (Marionette, PhotoTemplate) ->
   class PhotoView extends Marionette.ItemView
-    template: PhotoTemplate
+    template: _.template(PhotoTemplate)
 
     onRender: ->
       console.log @model

@@ -24,16 +24,15 @@ define [
           lng: "-122.401111"
         silent: true
         success: =>
-          console.log 'done'
           $('#photos').append photosView.render().el
 
       console.log(photos)
-   
-        
+
+
     onStart: ->
-   
+
 
     onStop: ->
-     
+
 
     onUnload: ->
