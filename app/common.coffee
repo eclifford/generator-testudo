@@ -19,8 +19,17 @@ require.config
     bootstrap: "vendor/bower_components/sass-bootstrap/js/"
     jquery: "vendor/bower_components/jquery/jquery"
     text: "vendor/bower_components/requirejs-text/text"
+    inview: "vendor/jquery.inview"
+    scrollspy: "vendor/bower_components/sass-bootstrap/js/scrollspy"
 
   shim:
     bootstrap:
       deps: ["jquery"]
+
+    scrollspy:
+      deps: ["jquery"]
+
+    inview:
+      deps: ["jquery"]
+
 

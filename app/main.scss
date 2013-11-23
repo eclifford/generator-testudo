@@ -9,12 +9,18 @@ h1, h2, h3, h4, h5 {
 }
 
 body {
-  color: black;
+  color: white;
   background-color: #333;
+  padding-top: 400px;
 }
 
 .jumbotron {
   color: white;
-  background-color: rgb(200,52,33);  
+  background-color: rgb(200,52,33);
+  margin-bottom: 0px;
+  padding: 10px;
 }
 
+.photo_container {
+  height: 600px;
+}
