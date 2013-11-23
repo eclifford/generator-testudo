@@ -4,8 +4,8 @@ define [
   'backbone'
   'marionette'
   'modules/instagram/collections/photosCollection'
-  'modules/instagram/views/photosGridView'
-], ($, _, Backbone, Marionette, PhotosCollection, PhotosGridView) ->
+  'modules/instagram/views/photosView'
+], ($, _, Backbone, Marionette, PhotosCollection, PhotosView) ->
   class InstagramModule extends Bronson.Module
     constructor: (data) ->
       # @data = data.el
@@ -14,7 +14,7 @@ define [
       App = new Marionette.Application()
       @photos = new PhotosCollection()
 
-      @photosGridView = new PhotosGridView
+      @photosGridView = new PhotosView
         el: '#photos'
         collection: @photos
 
