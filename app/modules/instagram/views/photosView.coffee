@@ -7,17 +7,17 @@ define [
   class PhotosGridView extends Marionette.CollectionView
     itemView: PhotoView
 
-    appendHtml: (collectionView, itemView, index) ->
+    onBeforeRender: ->
+      console.log @$el
+      console.log('hi')
 
-      template = itemView.el.outerHTML
-      console.log index, index % 4
-      if (index % 4) is 0
-        template = "<div class='row'>" + template
-      else if (index % 4) is 3
-        template = template + "</div>"
+    onRender: ->
+      $children = @$el.find('.photo-item')
+      i = 0
+      l = $children.length
 
-      console.log template
-
-      collectionView.$el.append(template)
+      while i < l
+        $children.slice(i, i + 4).wrapAll "<div class='row'></div>"
+        i += 4
 
 
