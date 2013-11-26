@@ -2,7 +2,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'vendor/bower_components/sass-bootstrap/lib/bootstrap';
 @import 'modules/gmaps/main';
-
+@import 'modules/instagram/main';
 
 h1, h2, h3, h4, h5 {
   font-family: 'Coda', cursive;
@@ -11,16 +11,48 @@ h1, h2, h3, h4, h5 {
 body {
   color: white;
   background-color: #333;
-  padding-top: 400px;
+  padding-top: 50px;
 }
 
-.jumbotron {
+#header {
+  background-color: rgb(45,45,45);
   color: white;
-  background-color: rgb(200,52,33);
-  margin-bottom: 0px;
-  padding: 10px;
+  padding: 5px;
 }
 
-.photo_container {
-  height: 600px;
+.navbar {
+  background-color: #d13c3c;
+  color: white;
+
+
+  a {
+    background-color: #d13c3c !important;
+    color: white !important;
+    font-family: 'Coda', cursive;
+  }
+
+  .navbar-brand {
+    color: #d13c3c;
+    font-family: 'Coda', cursive;
+    font-size: 24px;
+  }
+}
+
+
+
+section {
+
+}
+
+.module-container {
+
+}
+
+.about {
+  background-color: #131313;
+
+}
+
+.instagram {
+  background-color: #333030;
 }

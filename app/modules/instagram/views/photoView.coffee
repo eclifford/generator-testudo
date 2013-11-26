@@ -3,7 +3,7 @@ define [
   'text!modules/instagram/templates/photoTemplate.html'
 ], (Marionette, PhotoTemplate) ->
   class PhotoView extends Marionette.ItemView
-    className: 'col-md-3 photo-item'
+    className: 'col-sm-3 col-xs-3 photo-item'
     template: _.template(PhotoTemplate)
 
     events:

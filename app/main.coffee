@@ -8,36 +8,17 @@ require ['common'], (common) ->
     'bronson'
     'jquery'
     'inview'
-    'scrollspy'
   ], (Bronson, $) ->
     "use strict"
 
-    $('body').scrollspy
-      target: '#navbar'
-
-    # $(document).scroll ->
-    #   if $(this).scrollTop() > 300
-    #     $('#maps').stop().animate
-    #       height: 90
-    #     , 100
-
-    Bronson.load [
+    $('#instagram').one 'inview', ->
+      Bronson.load [
         'modules/instagram/main':
-          autostart: true
-          data:
-            el: '#photos'
+            autostart: true
+            data:
+              el: '#instagram .module-content'
       ]
 
-
-    # $('#photos').one 'inview', (event, isInView, visiblePartX,
-    #  visiblePartY) ->
-    #   if isInView
-    #     Bronson.load [
-    #       'modules/instagram/main':
-    #         autostart: true
-    #         data:
-    #           el: '#photos'
-    #     ]
 
     Bronson.load [
       'modules/gmaps/main':
@@ -45,4 +26,3 @@ require ['common'], (common) ->
         data:
           el: '#maps'
     ]
-

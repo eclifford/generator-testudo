@@ -13,31 +13,29 @@ define [
         lat: -12.043333
         lng: -77.028333
 
+      GMaps.geolocate
+        success: (position) =>
+          @map.setCenter position.coords.latitude, position.coords.longitude
+
       GMaps.on 'click', @map.map, (e) ->
         lat = e.latLng.lat()
         lng = e.latLng.lng()
-
-        console.log lat, lng
 
         Bronson.publish 'map:geoupdate',
           lat: lat
           lng: lng
 
       Bronson.subscribe 'map:instagram:addmarker', (data) =>
-        console.log data
         @map.addMarker
           lat: data.lat
           lng: data.lng
           title: 'Marker Test'
         @map.setCenter data.lat, data.lng
 
-      # @map.setOptions
-      #   scrollwheel: false
-
+      @map.setOptions
+        scrollwheel: false
 
     onStart: ->
-
-
 
     onStop: ->
 

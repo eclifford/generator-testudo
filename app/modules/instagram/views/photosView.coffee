@@ -7,10 +7,6 @@ define [
   class PhotosGridView extends Marionette.CollectionView
     itemView: PhotoView
 
-    onBeforeRender: ->
-      console.log @$el
-      console.log('hi')
-
     onRender: ->
       $children = @$el.find('.photo-item')
       i = 0

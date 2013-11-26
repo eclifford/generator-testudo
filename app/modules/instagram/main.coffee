@@ -8,14 +8,14 @@ define [
 ], ($, _, Backbone, Marionette, PhotosCollection, PhotosView) ->
   class InstagramModule extends Bronson.Module
     constructor: (data) ->
-      # @data = data.el
+      @data = data
 
     onLoad: ->
       App = new Marionette.Application()
       @photos = new PhotosCollection()
 
       @photosGridView = new PhotosView
-        el: '#photos'
+        el: @data.el
         collection: @photos
 
       @photos.fetch
@@ -28,19 +28,13 @@ define [
           @photosGridView.render()
 
     onStart: ->
-
       Bronson.subscribe 'instagram:map:geoupdate', (data) =>
-        console.log 'fetching', data
         @photos.fetch
           data:
             client_id: "b3481714257943a4974e4e7ba99eb357"
             lat: data.lat
             lng: data.lng
           silent: false
-          success: =>
-            # @photosGridView.render()
-
-
 
     onStop: ->
 
