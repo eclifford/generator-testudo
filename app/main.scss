@@ -1,8 +1,9 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$icon-font-path: "/vendor/bower_components/sass-bootstrap/fonts/";
 
 @import 'vendor/bower_components/sass-bootstrap/lib/bootstrap';
 @import 'modules/gmaps/main';
 @import 'modules/instagram/main';
+@import 'modules/carousel/main';
 
 h1, h2, h3, h4, h5 {
   font-family: 'Coda', cursive;
@@ -11,7 +12,7 @@ h1, h2, h3, h4, h5 {
 body {
   color: white;
   background-color: #333;
-  padding-top: 50px;
+  padding-top: 350px;
 }
 
 #header {
@@ -39,9 +40,9 @@ body {
 }
 
 
-
 section {
-
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .module-container {
@@ -49,10 +50,15 @@ section {
 }
 
 .about {
-  background-color: #131313;
+  background-color: #474444;
 
 }
 
 .instagram {
   background-color: #333030;
+}
+
+footer {
+  height: 500px;
+  background-color: #d13c3c; 
 }

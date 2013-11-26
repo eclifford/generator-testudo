@@ -3,11 +3,11 @@ define [
   'underscore'
   'backbone'
   'marionette'
-  'modules/instagram/collections/photosCollection'
-  'modules/instagram/views/photosView'
+  'modules/carousel/collections/photosCollection'
+  'modules/carousel/views/carouselView'
   'inview'
-], ($, _, Backbone, Marionette, PhotosCollection, PhotosView) ->
-  class InstagramModule extends Bronson.Module
+], ($, _, Backbone, Marionette, PhotosCollection, CarouselView) ->
+  class CarouselModule extends Bronson.Module
     constructor: (data) ->
       @data = data
 
@@ -15,7 +15,7 @@ define [
       App = new Marionette.Application()
       @photos = new PhotosCollection()
 
-      @photosGridView = new PhotosView
+      @carouselView = new CarouselView
         el: @data.el
         collection: @photos
 
@@ -27,12 +27,12 @@ define [
           count: 8
         silent: true
         success: =>
-          $('#instagram').one 'inview', =>
+          $('#carousel').one 'inview', =>
             @start()
         
 
     onStart: ->
-      @photosGridView.render()
+      @carouselView.render()
 
       Bronson.subscribe 'instagram:map:geoupdate', (data) =>
         @photos.fetch

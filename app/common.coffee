@@ -20,6 +20,8 @@ require.config
     jquery: "vendor/bower_components/jquery/jquery"
     text: "vendor/bower_components/requirejs-text/text"
     inview: "vendor/jquery.inview"
+    scrollTo: "vendor/jquery.scrollTo"
+    nav: "vendor/jquery.nav"
     scrollspy: "vendor/bower_components/sass-bootstrap/js/scrollspy"
 
   shim:
@@ -31,5 +33,11 @@ require.config
 
     inview:
       deps: ["jquery"]
+
+    scrollTo:
+      deps: ["jquery"]
+
+    nav:
+      deps: ["jquery", "scrollTo"]
 
 
