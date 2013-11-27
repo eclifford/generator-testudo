@@ -15,18 +15,16 @@ require ['common'], (common) ->
     $('.nav').onePageNav
       scrollOffset: 350
 
-
-
     Bronson.load [
       'modules/instagram/main':
-          autostart: true
-          data:
-            el: '#instagram .module-content'
+        autostart: true
+        data:
+          el: '#instagram .module-content'
     ]
 
     Bronson.load [
       'modules/gmaps/main':
-        autostart: true
+        autostart: false
         data:
           el: '#maps'
     ]

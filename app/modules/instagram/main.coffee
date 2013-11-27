@@ -33,7 +33,7 @@ define [
             lat: data.lat
             lng: data.lng
             count: 12
-          silent: false
+          reset: true
           success: =>
             $(@data.el).one 'inview', =>
               @photosGridView.render()

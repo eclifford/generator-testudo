@@ -13,5 +13,7 @@ define [
       @$el.attr 'id', @model.get('id')
 
     photoSelected: (e) ->
-      Bronson.publish 'instagram:addmarker',
+      $('.photo-item').removeClass 'active'
+      @$el.addClass 'active'
+      Bronson.publish 'instagram:selectmarker',
         photo: @model
