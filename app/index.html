@@ -15,18 +15,58 @@
         <script src="/vendor/bower_components/modernizr/modernizr.js"></script>
     </head>
     <body>
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Testudo</h1>
-          <p>A Frontend Application Boilerplate for building modular component driven web applications.</p>
-        </div>
-      </div>
- 
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
-        <div id='maps'></div>
-        <div id='content'></div>
-        <div id='photos'></div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Testudo</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
+      <div id='maps'></div>
+    </div>
+      <section class='module-container about' id='about'>
+        <div class="container">
+          <h2>About</h2>
+          <div class="module-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante mi, blandit ut rutrum eget, imperdiet vitae arcu. Ut at nisi ac justo aliquet egestas id non orci. Nunc at egestas turpis. Vivamus feugiat interdum facilisis. Pellentesque adipiscing nec diam at fringilla. Donec pretium leo at mauris posuere sollicitudin. Ut semper auctor pretium. Mauris euismod porttitor elit nec ullamcorper. Etiam ut lectus vel massa adipiscing sodales et quis leo. Quisque non leo tortor. Donec vel diam felis. Sed quis nulla porttitor, feugiat est eu, tempor dolor.
+          </p>
+         <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante mi, blandit ut rutrum eget, imperdiet vitae arcu. Ut at nisi ac justo aliquet egestas id non orci. Nunc at egestas turpis. Vivamus feugiat interdum facilisis. Pellentesque adipiscing nec diam at fringilla. Donec pretium leo at mauris posuere sollicitudin. Ut semper auctor pretium. Mauris euismod porttitor elit nec ullamcorper. Etiam ut lectus vel massa adipiscing sodales et quis leo. Quisque non leo tortor. Donec vel diam felis. Sed quis nulla porttitor, feugiat est eu, tempor dolor.
+          </p>
+         <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante mi, blandit ut rutrum eget, imperdiet vitae arcu. Ut at nisi ac justo aliquet egestas id non orci. Nunc at egestas turpis. Vivamus feugiat interdum facilisis. Pellentesque adipiscing nec diam at fringilla. Donec pretium leo at mauris posuere sollicitudin. Ut semper auctor pretium. Mauris euismod porttitor elit nec ullamcorper. Etiam ut lectus vel massa adipiscing sodales et quis leo. Quisque non leo tortor. Donec vel diam felis. Sed quis nulla porttitor, feugiat est eu, tempor dolor.
+          </p>
+
+          </div>
+        </div>
+      </section>
+
+        <section class='module-container instagram' id='instagram'>
+          <div class="container">
+            <h2 class='pull-left'>Instagram</h2>
+            <div class="pull-right" style="padding-top: 25px">
+            <span class="glyphicon glyphicon-stop"></span>
+            <span class="glyphicon glyphicon-play active"></span>
+            </div><div class="clearfix"></div>
+            <div class="module-content"></div>
+          </div>
+        </section>
+        <footer></footer>
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

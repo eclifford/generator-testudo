@@ -20,8 +20,16 @@ require.config
     jquery: "vendor/bower_components/jquery/jquery"
     text: "vendor/bower_components/requirejs-text/text"
     tpl: "vendor/bower_components/requirejs-tpl/tpl"
+    plugins: "vendor/plugins/"
 
   shim:
     bootstrap:
       deps: ["jquery"]
+
+    'plugins':
+      deps: ["jquery"]
+
+    'plugins/jquery.nav':
+      deps: ["jquery", "plugins/jquery.scrollTo"]
+
 

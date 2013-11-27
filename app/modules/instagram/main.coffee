@@ -5,34 +5,40 @@ define [
   'marionette'
   'modules/instagram/collections/photosCollection'
   'modules/instagram/views/photosView'
+  'plugins/jquery.inview'
 ], ($, _, Backbone, Marionette, PhotosCollection, PhotosView) ->
   class InstagramModule extends Bronson.Module
     constructor: (data) ->
-      # @data = data.el
+      console.log 'instagram', data
+      @data = data
 
     onLoad: ->
       App = new Marionette.Application()
-      photos = new PhotosCollection()
+      @photos = new PhotosCollection()
 
-      photosView = new PhotosView
-        collection: photos
+      @photosGridView = new PhotosView
+        el: @data.el
+        collection: @photos
 
-      photos.fetch
-        data:
-          client_id: "b3481714257943a4974e4e7ba99eb357"
-          lat: "37.788086"
-          lng: "-122.401111"
-        silent: true
-        success: =>
-          $('#photos').append photosView.render().el
+      $('.glyphicon-stop').click =>
+        @stop()
 
-      console.log(photos)
+      $('.glyphicon-play').click =>
+        @start()
 
-
-    onStart: ->
-
+      Bronson.subscribe 'instagram:map:geoupdate', (data) =>
+        @photos.fetch
+          data:
+            client_id: "b3481714257943a4974e4e7ba99eb357"
+            lat: data.lat
+            lng: data.lng
+            count: 12
+          reset: true
+          success: =>
+            $(@data.el).one 'inview', =>
+              @photosGridView.render()
 
     onStop: ->
-
+      Bronson.unsubscribe 'instagram'
 
     onUnload: ->

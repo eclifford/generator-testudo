@@ -26,6 +26,9 @@ module.exports =
       modules: [
         name: 'main'
       ,
-        name: 'modules/moduleA/main'
+        name: 'modules/instagram/main'
+        exclude: ['main']
+      ,
+        name: 'modules/gmaps/main'
         exclude: ['main']
       ]
