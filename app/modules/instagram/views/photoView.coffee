@@ -9,7 +9,9 @@ define [
     events:
       "click": "photoSelected"
 
-    photoSelected: ->
+    onRender: ->
+      @$el.attr 'id', @model.get('id')
+
+    photoSelected: (e) ->
       Bronson.publish 'instagram:addmarker',
-        lat: @model.get('location').latitude
-        lng: @model.get('location').longitude
+        photo: @model

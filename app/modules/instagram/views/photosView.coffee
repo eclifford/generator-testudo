@@ -8,6 +8,10 @@ define [
     itemView: PhotoView
 
     onRender: ->
+      Bronson.subscribe 'instagram:map:markerselected', (data) ->
+        console.log data.id
+        $("##{data.id}").addClass('active')
+
       $children = @$el.find('.photo-item')
       i = 0
       l = $children.length

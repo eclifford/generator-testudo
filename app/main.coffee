@@ -19,16 +19,9 @@ require ['common'], (common) ->
 
     Bronson.load [
       'modules/instagram/main':
-          autostart: false
+          autostart: true
           data:
             el: '#instagram .module-content'
-    ]
-
-    Bronson.load [
-      'modules/carousel/main':
-          autostart: false
-          data:
-            el: '#carousel .module-content'
     ]
 
     Bronson.load [

@@ -4,7 +4,10 @@
 #
 # @author Eric Clifford
 #
-module.exports = 
+module.exports =
+  options:
+    'max_line_length':
+      'level': 'ignore'
   app: [
     '<%= options.basePath %>/**/*.coffee'
   ]

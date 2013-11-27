@@ -15,11 +15,6 @@ body {
   padding-top: 350px;
 }
 
-#header {
-  background-color: rgb(45,45,45);
-  color: white;
-  padding: 5px;
-}
 
 .navbar {
   background-color: #d13c3c;
@@ -39,6 +34,16 @@ body {
   }
 }
 
+.glyphicon {
+  &.active {
+    color: #d13c3c;
+  }
+  &:hover {
+    color: #d13c3c;
+  }
+  cursor: pointer;
+}
+
 
 section {
   padding-top: 20px;
@@ -46,7 +51,11 @@ section {
 }
 
 .module-container {
+  padding-bottom: 40px;
+}
 
+.row {
+  margin: 0px;
 }
 
 .about {
@@ -60,5 +69,5 @@ section {
 
 footer {
   height: 500px;
-  background-color: #d13c3c; 
+  background-color: #d13c3c;
 }
