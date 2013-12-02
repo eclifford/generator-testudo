@@ -2,13 +2,11 @@
 # grunt-contrib-symlink
 # https://github.com/gruntjs/grunt-contrib-symlink
 #
-# @author Eric Clifford
-#
-module.exports = 
+module.exports =
   options:
     overwrite: true
 
-  expanded: 
+  expanded:
     files: [
       expand: true
       cwd: 'app/vendor/bower_components'

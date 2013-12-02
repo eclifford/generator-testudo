@@ -2,8 +2,6 @@
 # grunt-contrib-requirejs
 # https://github.com/gruntjs/grunt-contrib-requirejs
 #
-# @author Eric Clifford
-#
 module.exports =
   options:
     files: [

@@ -1,3 +1,6 @@
+#
+# Instagram Photo model
+#
 define [
   'backbone'
 ], (Backbone) ->

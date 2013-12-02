@@ -2,9 +2,7 @@
 # grunt-contrib-copy
 # https://github.com/gruntjs/grunt-contrib-copy
 #
-# @author Eric Clifford
-#
-module.exports = 
+module.exports =
   assets:
     expand: true
     dot: true

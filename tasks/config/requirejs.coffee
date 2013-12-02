@@ -2,8 +2,6 @@
 # grunt-contrib-requirejs
 # https://github.com/gruntjs/grunt-contrib-requirejs
 #
-# @author Eric Clifford
-#
 module.exports =
   # Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
   dist:

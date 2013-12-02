@@ -2,7 +2,7 @@
 
 ![Testudo](http://gb.fotolibra.com/images/previews/50037-roman-soldiers-in-testudo-formation-illustration.jpeg)
 
-Testudo is a modern web application boilerplate with first class support applications that are modular and testable. 
+Testudo is a web application boilerplate for large scalable projects.
 
 ## Key Features
 
@@ -20,7 +20,7 @@ Testudo is a modern web application boilerplate with first class support applica
 [Chai](http://chaijs.com/) | Karma + Chai + Chai JQuery
 [BronsonJS](http://bronsonjs.com/) | RequireJS adapter for modular app development
 
-## Insipration 
+## Inspiration 
 * [Large Scale JavaScript](http://addyosmani.com/largescalejavascript/)
 * [Nicholas Zakas Scalable Javascript Architecture](http://www.youtube.com/watch?v=vXjVFPosQHw)
 * [Yeoman](http://yeoman.io/)

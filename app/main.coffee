@@ -1,27 +1,19 @@
 #
 # App Main - The entry point into the application
 #
-# @author Eric Clifford
-#
 require ['common'], (common) ->
   require [
-    'bronson'
     'jquery'
-    'plugins/jquery.nav'
-  ], (Bronson, $) ->
-    "use strict"
+    'bronson'
+  ], ($, Bronson) ->
 
-    $('.nav').onePageNav
-      scrollOffset: 350
-
+    # Load instagram module
     Bronson.load [
       'modules/instagram/main':
         autostart: true
         data:
-          el: '#instagram .module-content'
-    ]
-
-    Bronson.load [
+          el: '#instagram'
+    ,
       'modules/gmaps/main':
         autostart: false
         data:

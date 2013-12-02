@@ -2,11 +2,9 @@
 # Build task
 # Build deployment artifacts
 #
-# @author Eric Clifford
-#
 module.exports = (grunt) ->
   grunt.registerTask 'build', [
-    'clean:dist' 
+    'clean:dist'
     'concurrent:dev'
     'symlink'
     'requirejs'

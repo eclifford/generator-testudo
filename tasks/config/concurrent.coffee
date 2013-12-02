@@ -2,9 +2,7 @@
 # grunt-concurrent
 # https://github.com/sindresorhus/grunt-concurrent
 #
-# @author Eric Clifford
-#
-module.exports = 
+module.exports =
   dev: [
     'sass'
     'coffee'
@@ -12,4 +10,4 @@ module.exports =
   ]
 
 
-  
+

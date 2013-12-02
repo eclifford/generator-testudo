@@ -1,15 +1,34 @@
+#
+# Instagram photos presented in a bootstrap grid
+#
 define [
   'underscore'
   'backbone'
   'marionette'
   'modules/instagram/views/photoView'
-], (_, Backbone, Marionette, PhotoView) ->
-  class PhotosGridView extends Marionette.CollectionView
+  'tpl!modules/instagram/templates/photosTemplate.html'
+], (_, Backbone, Marionette, PhotoView, PhotosTemplate) ->
+  class PhotosGridView extends Marionette.CompositeView
     itemView: PhotoView
+    template: PhotosTemplate
+    itemViewContainer: '.module-content'
+
+    events:
+      'click .glyphicon-stop': 'stop'
+      'click .glyphicon-play': 'start'
+
+    stop: (e) ->
+      Bronson.publish 'instagram:stop'
+      $(e.currentTarget).addClass('active')
+      $('.glyphicon-play').removeClass('active')
+
+    start: (e) ->
+      Bronson.publish 'instagram:start'
+      $(e.currentTarget).addClass('active')
+      $('.glyphicon-stop').removeClass('active')
 
     onRender: ->
-      console.log 'render'
-      Bronson.publish 'instagram:markers',
+      Bronson.publish 'instagram:update',
         markers: @collection
 
       Bronson.subscribe 'instagram:map:markerselected', (data) =>

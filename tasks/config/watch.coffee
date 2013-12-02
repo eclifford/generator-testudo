@@ -2,8 +2,6 @@
 # grunt-contrib-watch
 # https://github.com/gruntjs/grunt-contrib-watch
 #
-# @author Eric Clifford
-#
 module.exports =
   options :
     spawn: false

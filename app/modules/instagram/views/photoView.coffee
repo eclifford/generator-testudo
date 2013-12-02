@@ -1,3 +1,6 @@
+#
+# Instagram photo
+#
 define [
   'marionette'
   'tpl!modules/instagram/templates/photoTemplate.html'
@@ -15,5 +18,5 @@ define [
     photoSelected: (e) ->
       $('.photo-item').removeClass 'active'
       @$el.addClass 'active'
-      Bronson.publish 'instagram:selectmarker',
+      Bronson.publish 'instagram:imageselected',
         photo: @model

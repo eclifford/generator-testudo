@@ -2,9 +2,7 @@
 # grunt-contrib-coffee
 # https://github.com/gruntjs/grunt-contrib-coffee
 #
-# @author Eric Clifford
-#
-module.exports = 
+module.exports =
   dev:
     expand: true
     cwd: "<%= options.basePath %>"

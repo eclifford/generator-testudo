@@ -1,39 +1,56 @@
+#
+# Maps Module
+#
+# Sample Google maps module
+#
 define [
   'jquery'
   'bronson'
   'vendor/bower_components/gmaps/gmaps'
 ], ($, Bronson) ->
   class Gmaps extends Bronson.Module
+
     constructor: (data) ->
       @data = data
 
+    #
+    # get current users geolocation and start the module
+    #
     onLoad: ->
       GMaps.geolocate
         success: (position) =>
+          # notify subscribers of geo position
+          Bronson.publish 'map:geoupdate',
+            lat: position.coords.latitude
+            lng: position.coords.longitude
+
           @position = position
           @start()
-         
+
+    #
+    # render the map and wire up events
+    #
     onStart: ->
+      # create a new instance of gmaps
       map = new GMaps
         div: '#maps'
         lat: @position.coords.latitude
         lng: @position.coords.longitude
         zoom: 13
         scrollwheel: false
+        click: (e) ->
+          # notify subscribers of new click position
+          Bronson.publish 'map:geoupdate',
+            lat: e.latLng.ob
+            lng: e.latLng.pb
+        dragend: (e) ->
+          # notify subscribers of new dragged position
+          Bronson.publish 'map:geoupdate',
+            lat: e.center.ob
+            lng: e.center.pb
 
-      Bronson.publish 'map:geoupdate',
-        lat: @position.coords.latitude
-        lng: @position.coords.longitude
-
-      GMaps.on 'click', map.map, (e) ->
-        lat = e.latLng.lat()
-        lng = e.latLng.lng()
-
-        Bronson.publish 'map:geoupdate',
-          lat: lat
-          lng: lng
-
-      Bronson.subscribe 'map:instagram:markers', (data) =>
+      # place markers for new instagram photos
+      Bronson.subscribe 'map:instagram:update', (data) =>
         map.removeMarkers()
         markers = []
         data.markers.forEach (item) ->
@@ -45,25 +62,23 @@ define [
             click: (e) ->
               Bronson.publish 'map:markerselected',
               id: e.details.id
+
         map.addMarkers markers
 
-      Bronson.subscribe 'map:instagram:selectmarker', (data) =>
-        # map.setZoom 17
-
-        # map.addMarker
-        #   lat: data.photo.get('location').latitude
-        #   lng: data.photo.get('location').longitude
-        #   details:
-        #     id: data.photo.get('id')
-        #   title: 'Marker Test'
-        #   infoWindow:
-        #     content:
-        #       "<img src='#{data.photo.get('images').low_resolution.url}' width='120px' />"
-        #   click: (e) ->
-        #     Bronson.publish 'map:markerselected',
-        #       id: e.details.id
+      # center view on selected photos
+      Bronson.subscribe 'map:instagram:imageselected', (data) =>
         map.setCenter data.photo.get('location').latitude,
           data.photo.get('location').longitude
-    onStop: ->
 
+    #
+    # stop interacting with other modules
+    #
+    onStop: ->
+      Bronson.unsubscribe 'map:instagram:selectmarker'
+      Bronson.unsubscribe 'map:instagram:markers'
+
+    #
+    # unsubscribe all events and unrender view
+    #
     onUnload: ->
+      Bronson.unsubscribe 'map'
