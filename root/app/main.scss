@@ -4,8 +4,8 @@ $icon-font-path: "/vendor/bower_components/sass-bootstrap/fonts/";
 @import 'vendor/bower_components/sass-bootstrap/lib/bootstrap';
 
 /* module imports */
-@import 'modules/gmaps/main';
-@import 'modules/instagram/main';
+{% if (include_demo_files) { %}@import 'modules/gmaps/main';
+@import 'modules/instagram/main';{% } %}
 
 /* variables */
 $primary-color: #d13c3c;

@@ -25,13 +25,29 @@ Testudo is a web application boilerplate for large scalable projects.
 * [Nicholas Zakas Scalable Javascript Architecture](http://www.youtube.com/watch?v=vXjVFPosQHw)
 * [Yeoman](http://yeoman.io/)
 
-## Project Setup
+## Installation
 
-_First clone the repo_
+_Install latest version of **grunt-init**_
 
 ```shell
-$ git clone git@github.com:eclifford/testudo.git
+$ npm install -g git://github.com/gruntjs/grunt-init.git
 ```
+
+_Clone the repo into your **grunt-init** templates_
+
+```shell
+$ git clone git@github.com:eclifford/testudo.git ~/.grunt-init/testudo
+```
+
+## Project Setup
+
+Next go into the folder you want to setup testudo.
+
+```shell
+$ grunt-init testudo
+```
+
+Follow all on the onscreen prompts.
 
 _Install dependencies_
 

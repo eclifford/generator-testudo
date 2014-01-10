@@ -1,12 +1,13 @@
 #
 # App Main - The entry point into the application
 #
+# @author {%= author_name %}
+#
 require ['common'], (common) ->
-  require [
+  {% if (include_demo_files) { %}require [
     'jquery'
     'bronson'
   ], ($, Bronson) ->
-
     # Load instagram module
     Bronson.load
       id: 'instagram'
@@ -23,3 +24,7 @@ require ['common'], (common) ->
         el: '#maps'
       options:
         autostart: false
+  {% } else { %}require [
+    'jquery'
+  ], ($) ->
+  {% } %}
