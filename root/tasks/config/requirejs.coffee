@@ -23,6 +23,7 @@ module.exports = (grunt) ->
       # AMD Modules
       modules: [
         name: 'main'
+      {% if (include_demo_files) { %}
       ,
         name: 'modules/instagram/main'
         exclude: ['main']
@@ -30,3 +31,4 @@ module.exports = (grunt) ->
         name: 'modules/gmaps/main'
         exclude: ['main']
       ]
+      {% } %}

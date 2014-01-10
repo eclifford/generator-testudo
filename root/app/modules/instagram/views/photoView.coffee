@@ -3,7 +3,7 @@
 #
 define [
   'marionette'
-  'tpl!modules/instagram/templates/photoTemplate.html'
+  'tpl!modules/instagram/templates/photoTemplate.tmpl'
 ], (Marionette, PhotoTemplate) ->
   class PhotoView extends Marionette.ItemView
     template: PhotoTemplate

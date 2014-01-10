@@ -1,6 +1,6 @@
-# The `app/modules` Directory
+# `app/modules/`
 
-## Overview
+The `app/modules` directory is for modular web components including their tests.
 
 ```
 app/

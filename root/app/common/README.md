@@ -1,10 +1,8 @@
-# The `app/common` Directory
+# `app/common/`
 
-## Overview
-
-Where to put images, fonts etc.
+The `app/common` directory is for third-party libraries and components.
 
 ```
-app/
-  |- test/
+app/                  
+  |- common/         // third party libraries and components
 ```

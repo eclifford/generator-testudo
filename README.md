@@ -2,7 +2,7 @@
 
 ![Testudo](http://gb.fotolibra.com/images/previews/50037-roman-soldiers-in-testudo-formation-illustration.jpeg)
 
-Testudo is a web application boilerplate for large scalable projects.
+Testudo is a web application boilerplate for large scalable projects. Testudo has first class support for modern developer tooling such as RequireJS, CoffeeScript, SASS, Bootstrap and more.
 
 ## Key Features
 
@@ -20,12 +20,19 @@ Testudo is a web application boilerplate for large scalable projects.
 [Chai](http://chaijs.com/) | Karma + Chai + Chai JQuery
 [BronsonJS](http://bronsonjs.com/) | RequireJS adapter for modular app development
 
-## Inspiration 
+## Inspiration
 * [Large Scale JavaScript](http://addyosmani.com/largescalejavascript/)
 * [Nicholas Zakas Scalable Javascript Architecture](http://www.youtube.com/watch?v=vXjVFPosQHw)
 * [Yeoman](http://yeoman.io/)
 
 ## Installation
+
+### Prerequisites
+
+- Node Installed
+- Grunt Installed
+
+### Get Project Template
 
 _Install latest version of **grunt-init**_
 
@@ -64,7 +71,7 @@ $ grunt
 ### Overview
 
 ```
-testudo/                         
+testudo/
   |- .tmp/
   |- dist/
   |- app/
@@ -79,6 +86,10 @@ testudo/
   |  |  |  |- views/
   |  |  |- main.sass
   |  |  |- main.coffee
+  |  |- pages/
+  |  |  |- partials/
+  |  |  |  |- header.html
+  |  |  |- page2.html
   |  |- vendor
   |  |  |- bower_components/
   |  |- .htaccess
@@ -102,80 +113,7 @@ testudo/
 * `common.coffee`: RequireJS config shared by App, R.JS and Karma
 * `main.coffee`: entry point into the application from which you would load all other modules
 * `main.scss`: main stylesheet into which modules and bootstrap are to be imported
-* `tasks/`: organized grunt tasks and configuration options 
-
-### Writing your first module with BronsonJS
-
-The entry point of your application is `app/main.coffee`. From here it is certain that RequireJS and its configuration are both loaded and available. 
-
-Loading a module is simple. BronsonJS has several formats for loading modules. Let's take a look at the easiest.
-
-```coffee
-  Bronson.load ['modules/moduleA/main']
-```
-
-The code above will simply pass through the defined path `modules/moduleA/main` to RequireJS load the module, register it with Bronson and finally call both `load` and `start` on the module.
-
-#### Example Bronson Module
-
-```coffee
-  define [
-    'jquery'
-    'bronson'
-  ], ($, Bronson, MainView) ->
-    class ModuleA extends Bronson.Module
-      constructor: (data) ->
-        @data = data // store any passed in data
-
-      onLoad: ->
-        console.log 'loaded!'
-
-      onStart: ->
-        console.log 'started!'
-
-      onStop: ->
-        console.log 'stopped!'
-
-      onUnload: ->
-        console.log 'unloaded!'
-```
-
-As you can see Bronson has callbacks for `load`, `start`, `stop`, `unload`. This can be extremely helpful in the management of the life cycle of your modules in the wider scope of a large application.
-
-#### Passing data to Bronson Modules
-
-In addition to giving life cycle events Bronson also offers the ability to accept a `data` object during its instantiation. This `data` object is passed into the constructor of your module.
-
-```coffee
-  Bronson.load [
-    'modules/moduleA/main': 
-      data:
-        el: '#content'
-  ]
-```
-
-#### Toggling Autoload
-
-```coffee
-  Bronson.load [
-    'modules/moduleA/main': 
-      autoload: false
-  ]
-```
-
-#### Loading Multiple modules at once
-
-```coffee
-  Bronson.load [
-    'modules/moduleA/main': 
-      autoload: false
-  ,
-    'modules/moduleB/main': 
-      autoload: false
-  ]
-```
-
-### Global Pub/Sub with BronsonJS
+* `tasks/`: organized grunt tasks and configuration options
 
 ## Contributing changes
 
@@ -185,7 +123,7 @@ _soon_
 
 The MIT License
 
-Copyright (c) 2013 Eric Clifford
+Copyright (c) 2014 Eric Clifford
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -6,7 +6,7 @@ define [
   'backbone'
   'marionette'
   'modules/instagram/views/photoView'
-  'tpl!modules/instagram/templates/photosTemplate.html'
+  'tpl!modules/instagram/templates/photosTemplate.tmpl'
 ], (_, Backbone, Marionette, PhotoView, PhotosTemplate) ->
   class PhotosGridView extends Marionette.CompositeView
     itemView: PhotoView

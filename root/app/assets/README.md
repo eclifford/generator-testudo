@@ -1,10 +1,11 @@
-# The `app/assets` Directory
+# `app/assets/`
 
-## Overview
-
-Where to put images, fonts etc.
+The `app/assets` directory contains static assets such as images and fonts.
 
 ```
-app/
-  |- assets/
+app/                  
+  |- assets/         // static assets like fonts and images 
+  |  |- images       
+  |  |- fonts
+  |  |- ...
 ```

@@ -1,15 +1,15 @@
-# The `app` Directory
+# `app/`
 
-## Overview
+The `app/` directory contains all application and test code.
 
 ```
-app/
-  |- assets/
-  |- common/
-  |- modules/
-  |- pages/
-  |- common.coffee
-  |- index.html
-  |- main.coffee
-  |- main.scss
+app/                  
+  |- assets/         // static assets like fonts and images 
+  |- common/         // third-party libraries and components
+  |- modules/        // modular web components including tests
+  |- pages/          // location of pages and partials
+  |- common.coffee   // require.js client configuration
+  |- index.html      // startup page
+  |- main.coffee     // application entry point script
+  |- main.scss       // main stylesheet
 ```

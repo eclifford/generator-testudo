@@ -1,9 +1,9 @@
-# The `app/pages` Directory
+# `app/pages/`
 
-## Overview
+The `app/pages` directory is used for pages other than the main `index.html` as well as partial templates.
 
 ```
 app/
   |- pages/
-  |  |- _partials/
+  |  |- _partials/       // reusable partial templates
 ```
