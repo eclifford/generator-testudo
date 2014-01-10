@@ -1,0 +1,3 @@
+{
+  "app/modules/**/*": "{%= include_demo_files %}"
+}

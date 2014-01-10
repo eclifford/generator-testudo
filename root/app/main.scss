@@ -1,0 +1,55 @@
+$icon-font-path: "/vendor/bower_components/sass-bootstrap/fonts/";
+
+/* base imports */
+@import 'vendor/bower_components/sass-bootstrap/lib/bootstrap';
+
+/* module imports */
+{% if (include_demo_files) { %}@import 'modules/gmaps/main';
+@import 'modules/instagram/main';{% } %}
+
+/* variables */
+$primary-color: #d13c3c;
+$background-color: #474444;
+$primary-text-color: #ffffff;
+$link-color: #d13c3c;
+
+/* styles */
+h1, h2, h3, h4, h5 {
+  font-family: 'Coda', cursive;
+}
+
+body {
+  color: $primary-text-color;
+  background-color: $background-color;
+  padding-top: 350px;
+}
+
+.navbar {
+  background-color: $primary-color;
+  color: $primary-text-color;
+
+  .navbar-brand {
+    color: $primary-text-color;
+    font-family: 'Coda', cursive;
+    font-size: 24px;
+  }
+}
+
+.glyphicon {
+  &.active {
+    color: $link-color;
+  }
+  &:hover {
+    color: $link-color;
+  }
+  cursor: pointer;
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.row {
+  margin: 0px;
+}
