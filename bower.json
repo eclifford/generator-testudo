@@ -7,7 +7,7 @@
     "requirejs": "~2.1.9",
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
-    "bronson": "~2.0.7",
+    "bronson": "~2.0.12",
     "requirejs-text": "~2.0.10",
     "gmaps": "~0.4.8",
     "marionette": "~1.2.3",

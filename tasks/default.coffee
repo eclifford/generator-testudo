@@ -9,7 +9,5 @@ module.exports = (grunt) ->
     'concurrent:dev'
     'symlink'
     'connect:livereload'
-    'karma:unit:start'
     'watch'
   ]
-

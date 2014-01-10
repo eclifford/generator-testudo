@@ -12,24 +12,23 @@ define [
   'modules/instagram/views/photosView'
 ], ($, _, Backbone, Marionette, PhotosCollection, PhotosView) ->
   class InstagramModule extends Bronson.Module
-    constructor: (data) ->
-      @data = data
+
+    events:
+      'instagram:stop': 'stop'
+      'instagram:start': 'start'
+      'map:geoupdate': 'update'
 
     #
     # load the application
     #
-    onLoad: ->
+    onLoad: (data) ->
+      @data = data
       App = new Marionette.Application()
-
-      Bronson.subscribe 'instagram:instagram:stop', => @stop()
-      Bronson.subscribe 'instagram:instagram:start', => @start()
 
     #
     # listen for notifications and prepare view
     #
     onStart: ->
-      Bronson.subscribe 'instagram:map:geoupdate', (data) => @update(data)
-
       @photos = new PhotosCollection()
 
       @photosGridView = new PhotosView
@@ -46,7 +45,6 @@ define [
     # stop all notifications and unrender the module
     #
     onUnload: ->
-      Bronson.unsubscribe 'instagram'
 
     #
     # on position change fetch new photos

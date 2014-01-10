@@ -8,14 +8,18 @@ require ['common'], (common) ->
   ], ($, Bronson) ->
 
     # Load instagram module
-    Bronson.load [
-      'modules/instagram/main':
+    Bronson.load
+      id: 'instagram'
+      path: 'modules/instagram/main'
+      data:
+        el: '#instagram'
+      options:
         autostart: true
-        data:
-          el: '#instagram'
-    ,
-      'modules/gmaps/main':
+
+    Bronson.load
+      id: 'gmaps'
+      path: 'modules/gmaps/main'
+      data:
+        el: '#maps'
+      options:
         autostart: false
-        data:
-          el: '#maps'
-    ]
