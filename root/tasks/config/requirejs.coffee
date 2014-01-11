@@ -2,7 +2,22 @@
 # grunt-contrib-requirejs
 # https://github.com/gruntjs/grunt-contrib-requirejs
 #
+glob = require 'glob'
+
 module.exports = (grunt) ->
+  # Setup modules array with default main module
+  modules = [
+    name: 'main'
+  ]
+
+  # Find all modules and add them to the r.js module defintions
+  glob.sync("modules/**/main.coffee",
+    cwd: grunt.settings.paths.basePath
+  ).forEach (option) ->
+    modules.push
+      name: option.replace('.coffee', '')
+      exclude: ['main']
+
   # Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
   dist:
     options:
@@ -21,14 +36,4 @@ module.exports = (grunt) ->
       wrap: true
 
       # AMD Modules
-      modules: [
-        name: 'main'
-      {% if (include_demo_files) { %}
-      ,
-        name: 'modules/instagram/main'
-        exclude: ['main']
-      ,
-        name: 'modules/gmaps/main'
-        exclude: ['main']
-      ]
-      {% } %}
+      modules: modules

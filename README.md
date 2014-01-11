@@ -31,6 +31,7 @@ Testudo is a web application boilerplate for large scalable projects. Testudo ha
 
 - Node Installed
 - Grunt Installed
+- Ruby Installed + Bundler
 
 ### Get Project Template
 
@@ -114,6 +115,9 @@ testudo/
 * `main.coffee`: entry point into the application from which you would load all other modules
 * `main.scss`: main stylesheet into which modules and bootstrap are to be imported
 * `tasks/`: organized grunt tasks and configuration options
+
+### Understanding Modules
+
 
 ## Contributing changes
 
