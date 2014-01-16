@@ -29,7 +29,13 @@
     "karma-chai-jquery": "~0.1.0",
     "grunt-contrib-symlink": "~0.2.0",
     "grunt-contrib-sass": "~0.6.0",
-    "grunt-include-replace": "~1.2.0"
+    "grunt-include-replace": "~1.2.0",
+    "grunt-selenium-launcher": "~0.1.1",
+    "grunt-cucumber": "git://github.com/eclifford/grunt-cucumber-js#9209fd7a8a950d7a843bd41c8eb0713f850c6d51",
+    "wd": "~0.2.8",
+    "chai": "~1.8.1",
+    "chai-as-promised": "~4.1.0",
+    "dotenv": "~0.2.3"
   },
   "engines": {
     "node": ">=0.8.0"
