@@ -14,7 +14,7 @@ exports.notes = '';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You should now install project dependencies with _npm ' +
-  'install_ and _bower install_. After that, you may execute project tasks with _grunt_. For ' +
+  'install_, _bower install_ and finally _bundle install_. After that, you may execute project tasks with _grunt_. For ' +
   'more information about the available grunt commands refer to documentation below. ' +
   '\n\n' +
   'https://github.com/eclifford/testudo';
@@ -76,14 +76,14 @@ exports.template = function(grunt, init, done) {
     props.keywords = [];
 
     props.devDependencies = {
-      "grunt": "~0.4.1",
-      "grunt-contrib-copy": "~0.4.1",
+      "grunt": "~0.4.2",
+      "grunt-contrib-copy": "~0.5.0",
       "grunt-contrib-connect": "~0.5.0",
       "grunt-contrib-clean": "~0.5.0",
       "grunt-contrib-requirejs": "~0.4.1",
-      "grunt-contrib-watch": "~0.5.2",
-      "grunt-contrib-coffee": "~0.7.0",
-      "karma": "~0.10.4",
+      "grunt-contrib-watch": "~0.5.3",
+      "grunt-contrib-coffee": "~0.8.0",
+      "karma": "~0.10.9",
       "karma-script-launcher": "~0.1.0",
       "karma-chrome-launcher": "~0.1.0",
       "karma-firefox-launcher": "~0.1.0",
@@ -93,18 +93,16 @@ exports.template = function(grunt, init, done) {
       "karma-phantomjs-launcher": "~0.1.0",
       "karma-coverage": "~0.1.1",
       "karma-mocha": "~0.1.0",
-      "grunt-env": "~0.4.0",
       "grunt-karma": "~0.6.2",
-      "grunt-bower-requirejs": "~0.7.0",
-      "grunt-concurrent": "~0.3.0",
-      "load-grunt-tasks": "~0.1.0",
-      "glob": "~3.2.6",
-      "grunt-coffeelint": "0.0.7",
-      "karma-sinon-chai": "~0.1.1",
+      "grunt-concurrent": "~0.4.2",
+      "load-grunt-tasks": "~0.2.1",
+      "glob": "~3.2.8",
+      "grunt-coffeelint": "0.0.8",
+      "karma-sinon-chai": "~0.1.4",
       "karma-chai-jquery": "~0.1.0",
       "grunt-contrib-symlink": "~0.2.0",
-      "grunt-contrib-sass": "~0.5.0",
-      "grunt-include-replace": "~1.1.3"
+      "grunt-contrib-sass": "~0.6.0",
+      "grunt-include-replace": "~1.2.0"
     };
 
     // Files to copy (and process).
