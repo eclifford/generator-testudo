@@ -71,7 +71,7 @@ Testudo is heavily influenced from my experience in building modular web applica
 
 In Testudo the creation, testing, management and optimization of these widgets is made possible by Testudo's tooling. Testudo is a series of tools and practices around modular app development. 
 
-** Key Features **
+**Key Features**
 
 - Full AMD compatibility with [RequireJS](http://requirejs.org) 
 - (Optional) [BronsonJS](http://www.bronsonjs.com) management layer for modules 
@@ -82,7 +82,7 @@ In Testudo the creation, testing, management and optimization of these widgets i
 
 Testudo understands how important testing is and how frustrating it can be to setup a consistent reliable testing framework. Testudo has full support for the writing of unit tests anywhere in the `app/modules/`. In addition, unit testing dependency injection is made easy by full RequireJS support in all your test specs. Finally, Testudo has full support for **Sinon**, **Chai**, **Jquery-Chai** and **Sinon-Chai**. Testing has never been this easy.
 
-** Key Features **
+**Key Features**
 
 - Write tests where you want them.. next to your app code
 - Write your unit tests in full AMD
@@ -122,7 +122,7 @@ Testudo is an attempt at offering a solid opinionated boilerplate based on my pe
 
 Testudo is designed to be used by a team in a real work environment. Testudo comes customizable to better fit your company, business, client or even team member through extensible setup and run time configuration.
 
-** Key Features **
+**Key Features**
 
 - Installable template through `grunt-init` with options for inclusion of libraries
 - Configure everything from folder, ports, live-reload settings all from a single user configuration file
