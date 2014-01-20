@@ -2,7 +2,7 @@
 
 ![Testudo](http://gb.fotolibra.com/images/previews/50037-roman-soldiers-in-testudo-formation-illustration.jpeg)
 
-> Testudo is a Grunt based boilerplate for the building of modern, modular, testable web applications. Testudo has first class support for all of the modern tools you know and love such as RequireJS, CoffeeScript, Karma, Grunt, Bower, SASS, Bootstrap and many more. 
+> Testudo is a Grunt based boilerplate for the building of modern, modular, testable web applications. Testudo has first class support for all of the modern tools you know and love such as RequireJS, CoffeeScript, Karma, Grunt, Bower, SASS, Bootstrap and many more.
 
 ## Quick Start
 
@@ -13,7 +13,7 @@
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Bundler](http://bundler.io/)
 
-### Install Testudo 
+### Install Testudo
 
 _Install the **latest** version of **grunt-init**. You **MUST** download from git as it is newer than what is on **NPM** currently._
 
@@ -24,7 +24,7 @@ $ npm install -g git://github.com/gruntjs/grunt-init.git
 _Clone the repo into your **grunt-init** templates_
 
 ```shell
-$ git clone git@github.com:eclifford/testudo.git ~/.grunt-init/testudo
+$ git clone git@github.com/eclifford/testudo.git ~/.grunt-init/testudo
 ```
 
 ### Create Project with Testudo
@@ -42,13 +42,13 @@ Once your project is setup you'll need to next install all the dependencies.
 _Install node dependencies_
 
 ```shell
-$ npm install 
+$ npm install
 ```
 
 _Install bower dependencies_
 
 ```shell
-$ bower install 
+$ bower install
 ```
 
 _Install ruby dependencies_
@@ -67,16 +67,16 @@ $ grunt
 
 ### Modular Focus
 
-Testudo is heavily influenced from my experience in building modular web applications. The key to building any large scale web application in JavaScript is to **not**, instead our focus should be on creating modular widgets that operate independently of the larger application. 
+Testudo is heavily influenced from my experience in building modular web applications. The key to building any large scale web application in JavaScript is to **not**, instead our focus should be on creating modular widgets that operate independently of the larger application.
 
-In Testudo the creation, testing, management and optimization of these widgets is made possible by Testudo's tooling. Testudo is a series of tools and practices around modular app development. 
+In Testudo the creation, testing, management and optimization of these widgets is made possible by Testudo's tooling. Testudo is a series of tools and practices around modular app development.
 
 **Key Features**
 
-- Full AMD compatibility with [RequireJS](http://requirejs.org) 
-- (Optional) [BronsonJS](http://www.bronsonjs.com) management layer for modules 
-- Dynamic management of **R.JS** build layer for modules 
-- Dynamic management of **SASS** imports for modules 
+- Full AMD compatibility with [RequireJS](http://requirejs.org)
+- (Optional) [BronsonJS](http://www.bronsonjs.com) management layer for modules
+- Dynamic management of **R.JS** build layer for modules
+- Dynamic management of **SASS** imports for modules
 
 ### Test First
 
@@ -87,15 +87,15 @@ Testudo understands how important testing is and how frustrating it can be to se
 - Write tests where you want them.. next to your app code
 - Write your unit tests in full AMD
 - Karma Test Runner
-- Chai Assertions with Chai-Jquery and Chai-Sinon 
+- Chai Assertions with Chai-Jquery and Chai-Sinon
 - Sinon for mocks and stubs
 
 ### Modern Tooling
 
-Testudo comes loaded with an opinionated set of tools and libraries that I believe reflect some of the best of the modern tool sets made available to front end developers. Tools like RequireJS and CoffeeScript and core to Testudo and treated as first class citizens instead of afterthoughts. 
+Testudo comes loaded with an opinionated set of tools and libraries that I believe reflect some of the best of the modern tool sets made available to front end developers. Tools like RequireJS and CoffeeScript and core to Testudo and treated as first class citizens instead of afterthoughts.
 
-| Technology | Overview 
---- | --- 
+| Technology | Overview
+--- | ---
 [CoffeeScript](http://coffeescript.org/) | 100% written in CoffeeScript
 [CoffeeLint](http://www.coffeelint.org/) | Enforced configurable linting on all App and Test code
 [RequireJS](http://requirejs.org/) | RequireJS done right
@@ -114,11 +114,11 @@ Testudo comes loaded with an opinionated set of tools and libraries that I belie
 - Full application code support for CoffeeScript
 - Grunt files and tasks all written in CoffeeScript
 - Unit test CoffeeScript and RequireJS support
-- Optional Compile time linting with [CoffeeLint](http://www.coffeelint.org/) 
+- Optional Compile time linting with [CoffeeLint](http://www.coffeelint.org/)
 
-### Battle Tested 
+### Battle Tested
 
-Testudo is an attempt at offering a solid opinionated boilerplate based on my personal experience developing tools and processes for enterprise web sites. 
+Testudo is an attempt at offering a solid opinionated boilerplate based on my personal experience developing tools and processes for enterprise web sites.
 
 Testudo is designed to be used by a team in a real work environment. Testudo comes customizable to better fit your company, business, client or even team member through extensible setup and run time configuration.
 
@@ -137,12 +137,12 @@ Testudo is designed to be used by a team in a real work environment. Testudo com
 testudo/
   |- .tmp/                    // staging directory for compiled artifacts
   |- dist/                    // production directory for prod quality artifacts
-  |- app/                     
+  |- app/
   |  |- assets/               // static assets such as images and fonts
   |  |- common/               // third party or internal libraries (not managed by bower)
   |  |- modules/              // location of all module widgets in your application
   |  |  |- EXAMPLE_MODULE/    // example widget
-  |  |  |  |- collections/    
+  |  |  |  |- collections/
   |  |  |  |- models/
   |  |  |  |- templates/
   |  |  |  |- test/
@@ -183,7 +183,7 @@ Testudo enables the easy construction of a framework agnostic module application
 
 #### What is a Module
 
-A Module is a standalone self sustaining component with limited knowledge of the greater system in which is operates. Modules by design are loosely coupled and therefore a system comprised of modules is less brittle than one that is not.   
+A Module is a standalone self sustaining component with limited knowledge of the greater system in which is operates. Modules by design are loosely coupled and therefore a system comprised of modules is less brittle than one that is not.
 
 Modules in Testudo reside in the `app/modules/` directory and are automatically added to **r.js** and imported into the main **SASS** stylesheet. A Module in Testudo can be anything from a single script file to an entire MVC application written in Backbone or something similar.
 
@@ -197,7 +197,7 @@ app/
   |  |  |- templates/                // external templates (underscore, handlebars etc)
   |  |  |- test
   |  |  |  |- moduleASpec.coffee     // module test spec
-  |  |  |- views/ 
+  |  |  |- views/
   |  |  |  |- mainView.coffee        // Backbone (or similar) view
   |  |  |- main.coffee               // module entry point (optionally BronsonJS)
   |  |  |- main.scss                 // module specific stylesheet
@@ -215,7 +215,7 @@ To better support the isolation and loose coupling of modules in your system Bro
 
 This all starts with the Bronson.Module object which is the entry point into your module and itself acts as a mediator to the inner workings of your module.
 
-Below is an example of what a Bronson module looks like. 
+Below is an example of what a Bronson module looks like.
 
 ```coffee
 #
@@ -289,23 +289,23 @@ define [
 
 Testudo works with the **R.JS** (RequireJS build tool) to automatically build modules as separate packages reducing the footprint of your application on initial load. By following the convention of putting each module in `app/modules/` Testudo will find each `main.coffee` and add it to the modules list in R.JS excluding all application code in `app/main.coffee`. This is done automatically and no customization of the R.JS build configuration is necessary.
 
-The benefit of this is you download just the base application code up front and using RequireJS asynchronously fetch your modules as needed through Bronson. 
+The benefit of this is you download just the base application code up front and using RequireJS asynchronously fetch your modules as needed through Bronson.
 
 #### SASS
 
-Testudo works with **Sass-Globbing** to automatically include all module specific SASS into your main SASS stylesheet. 
+Testudo works with **Sass-Globbing** to automatically include all module specific SASS into your main SASS stylesheet.
 
 #### Testing Modules
 
-Testudo has a customized RequireJS Karma runner to find all test specs following the convention of `**/*Spec.coffee` in your `app/modules/` folder and running them with Karma in the `grunt test:unit` task. 
+Testudo has a customized RequireJS Karma runner to find all test specs following the convention of `**/*Spec.coffee` in your `app/modules/` folder and running them with Karma in the `grunt test:unit` task.
 
-Because Testudo uses Require to load test specs your specs themselves should be wrapped in a define block and should use RequireJS to load the objects to test. This allows granular unit specific testing and allows for much greater flexibility in substituting mocks through dependency injection. 
+Because Testudo uses Require to load test specs your specs themselves should be wrapped in a define block and should use RequireJS to load the objects to test. This allows granular unit specific testing and allows for much greater flexibility in substituting mocks through dependency injection.
 
 My convention is to put all my tests in a `test/` folder inside of `app/modules/moduleA/` but you may put yours anywhere so long as they are in the `app/modules` folder.
 
 ### Configuration
 
-#### User Settings 
+#### User Settings
 
 Included in the project is a `user-settings.json` file for making custom changes to your workspace. It is important that after changing this file to suit your needs that you do **not** check it in. Run the following snippet to mark a file as untracked.
 
@@ -324,14 +324,14 @@ You can at any time update your Testudo project generator by doing the following
 ```
 $ cd ~/.grunt-init/testudo
 $ git pull
-``` 
+```
 
 ## Roadmap
 
 * [0.2.0] - further optimization of runners
-* [0.3.0] - addition of acceptance testing 
+* [0.3.0] - addition of acceptance testing
 
-## Contributing 
+## Contributing
 
 I welcome any contributions. Please feel free to offer suggestions and submit pull requests.
 
