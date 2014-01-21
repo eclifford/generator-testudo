@@ -1,26 +1,12 @@
 # Testudo Gruntfile
 # @author Eric Clifford
 #
-module.exports = (grunt) ->
-  # Load all grunt tasks
-  require('load-grunt-tasks')(grunt)
 
-  # Our configuration object
-  config = grunt.settings = grunt.util._.extend
-    paths:
-      basePath: 'app'
-      buildDir: 'dist'
-      tempDir: '.tmp'
-  , grunt.file.readJSON('user-settings.json')
+# Load ENV variables
+require('dotenv').load()
 
-  # Initialize Grunt
-  grunt.initConfig(loadConfig('./tasks/config/', grunt))
-
-  # Load tasks
-  grunt.loadTasks('./tasks');
-
-# Load configuration options
-#
+# Dynamically build Grunt configuration from external files
+# credit http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html
 loadConfig = (path, grunt) ->
   glob = require("glob")
   object = {}
@@ -29,6 +15,20 @@ loadConfig = (path, grunt) ->
     cwd: path
   ).forEach (option) ->
     key = option.replace(/\.coffee$/, "")
-    object[key] = require(path + option)(grunt)
+    object[key] = require(path + option)
 
   object
+
+module.exports = (grunt) ->
+
+  # Load task configurations with overrides
+  config = grunt.util._.extend {}
+  , loadConfig('./grunt/options/')
+
+  # Initialize Grunt
+  grunt.initConfig(config)
+
+  # Load Grunt tasks
+  require('load-grunt-tasks')(grunt)
+
+  grunt.loadTasks('./grunt/tasks/');

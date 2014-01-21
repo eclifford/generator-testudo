@@ -19,15 +19,24 @@ define [
     # get current users geolocation and start the module
     #
     onLoad: (data) ->
-      GMaps.geolocate
-        success: (position) =>
-          # notify subscribers of geo position
-          Bronson.publish 'map:geoupdate',
-            lat: position.coords.latitude
-            lng: position.coords.longitude
+      # Bronson.publish 'map:geoupdate',
+      #   lat: 50.455755
+      #   lng: 30.511565
 
-          @position = position
-          @start()
+      # @position = position
+      @start()
+
+
+
+      # GMaps.geolocate
+      #   success: (position) =>
+      #     # notify subscribers of geo position
+      #     Bronson.publish 'map:geoupdate',
+      #       lat: position.coords.latitude
+      #       lng: position.coords.longitude
+
+      #     @position = position
+      #     @start()
 
     #
     # render the map and wire up events
@@ -36,8 +45,8 @@ define [
       # create a new instance of gmaps
       @map = new GMaps
         div: '#maps'
-        lat: @position.coords.latitude
-        lng: @position.coords.longitude
+        lat: 37.7749295
+        lng: -122.4194155
         zoom: 13
         scrollwheel: false
         click: (e) ->

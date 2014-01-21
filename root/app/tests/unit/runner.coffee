@@ -2,13 +2,12 @@
 # Setup Karma w/ Require
 # Find all specs in the modules and load them.
 #
-# @author {%= author_name %}
+# @author Eric Clifford
 #
 tests = []
 for file of window.__karma__.files
   if window.__karma__.files.hasOwnProperty(file)
-
-    specRgx = new RegExp("modules/.*/[0-9A-Za-z]*Spec.js")
+    specRgx = new RegExp("unit/.*/[0-9A-Za-z]*Spec.js")
     tests.push file if specRgx.test(file)
 
 requirejs.config

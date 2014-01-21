@@ -5,4 +5,4 @@
 module.exports = (grunt, target) ->
   grunt.registerTask "server", (target) ->
     return grunt.task.run(["build", "connect:dist:keepalive"]) if target is "dist"
-    grunt.task.run ["clean:server", "concurrent:server", "connect:livereload", "watch"]
+    grunt.task.run ["clean:dev", "concurrent:dev", "includereplace", "connect:dev"]

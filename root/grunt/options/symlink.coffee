@@ -2,7 +2,7 @@
 # grunt-contrib-symlink
 # https://github.com/gruntjs/grunt-contrib-symlink
 #
-module.exports = (grunt) ->
+module.exports =
   options:
     force: true
     overwrite: true
@@ -10,7 +10,7 @@ module.exports = (grunt) ->
   expanded:
     files: [
       expand: true
-      cwd: '<%= grunt.settings.paths.basePath %>/vendor/bower_components'
+      cwd: "#{process.env.GRUNT_BASE_PATH}/vendor/bower_components"
       src: ['*']
-      dest: '<%= grunt.settings.paths.tempDir %>/vendor/bower_components'
+      dest: "#{process.env.GRUNT_TEMP_PATH}/vendor/bower_components"
     ]

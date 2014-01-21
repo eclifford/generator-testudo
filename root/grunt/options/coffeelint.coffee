@@ -2,10 +2,10 @@
 # grunt-coffeelint
 # https://github.com/vojtajina/grunt-coffeelint
 #
-module.exports = (grunt) ->
+module.exports = 
   options:
     'max_line_length':
       'level': 'ignore'
-  app: [
-    '<%= grunt.settings.paths.basePath %>/**/*.coffee'
+  dev: [
+    "#{process.env.GRUNT_BASE_PATH}/{modules,tests}/**/*.coffee"
   ]

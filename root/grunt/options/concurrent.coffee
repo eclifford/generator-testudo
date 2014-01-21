@@ -2,7 +2,7 @@
 # grunt-concurrent
 # https://github.com/sindresorhus/grunt-concurrent
 #
-module.exports = (grunt) ->
+module.exports = 
   dev: [
     'sass'
     'coffee'
