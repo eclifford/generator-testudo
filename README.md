@@ -24,7 +24,7 @@ $ npm install -g git://github.com/gruntjs/grunt-init.git
 _Clone the repo into your **grunt-init** templates_
 
 ```shell
-$ git clone git@github.com/eclifford/testudo.git ~/.grunt-init/testudo
+$ git clone git@github.com:eclifford/testudo.git ~/.grunt-init/testudo
 ```
 
 ### Create Project with Testudo
