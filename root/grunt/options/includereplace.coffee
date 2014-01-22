@@ -1,12 +1,21 @@
 #
-# grunt-include-replace
-# https://github.com/alanshaw/grunt-include-replace
+# IncludeReplace Task
+# 
+# The IncludeReplace task adds HTML partial compilation for files and
+# variables without the need for serverside support.
 #
+# More information
+# - https://github.com/alanshaw/grunt-include-replace
+# 
+# @author Eric Clifford
+#
+nconf = require('nconf')
+
 module.exports =
   options:
-    includesDir: "#{process.env.GRUNT_BASE_PATH}/pages/_partials"
+    includesDir: "#{nconf.get('app').basePath}/pages/_partials"
   dev:
     expand: true
-    cwd: process.env.GRUNT_BASE_PATH
+    cwd: nconf.get('app').basePath
     src: ['index.html', 'pages/**/*.html']
-    dest: process.env.GRUNT_TEMP_PATH
+    dest: nconf.get('app').tempDir

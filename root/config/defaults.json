@@ -1,0 +1,23 @@
+{
+  "app": {
+    "basePath": "app",
+    "tempDir": ".tmp",
+    "buildDir": "dist",
+    "linting": true
+  },
+  "server": {
+    "hostname": "localhost",
+    "port": "3000",
+    "livereload": true, 
+    "livereloadPort": "35729",
+    "open": true
+  },
+  "testing": {
+    "unitBrowsers": ["PhantomJS"],
+    "acceptanceBrowser": "firefox",
+    "acceptanceLogging": true
+  },
+  "env": {
+    "SELENIUM_VERSION": "2.39.0:f2391600481dd285002d04b66916fc4286ff70ce"
+  }
+}

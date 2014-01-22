@@ -12,7 +12,7 @@ for file of window.__karma__.files
 
 requirejs.config
 
-  #Karma serves files from '/base'
+  # Karma serves files from '/base'
   baseUrl: "/base/.tmp"
 
   # ask Require.js to load these files (all our tests)
@@ -21,4 +21,5 @@ requirejs.config
   # start test run, once Require.js is done
   callback: window.__karma__.start
 
+  # add a known DOM element to the page for appending test elements
   document.body.innerHTML += "<div id='fixtures'></div>"

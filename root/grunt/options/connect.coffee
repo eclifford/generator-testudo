@@ -1,22 +1,32 @@
 #
-# grunt-contrib-connect
-# https://github.com/gruntjs/grunt-contrib-connect
+# Connect Task
+# 
+# The connect task launches a configurable node connect standalone
+# server with optional livereload and auto 'open' both of which are 
+# configurable in the user options.
 #
+# More information
+# - https://github.com/gruntjs/grunt-contrib-connect
+# 
+# @author Eric Clifford
+#
+nconf = require('nconf')
+
 module.exports = 
   options:
-    port: process.env.SERVER_PORT
-    livereload: Boolean(process.env.SERVER_LIVERELOAD_PORT)
-    hostname: process.env_SERVER_HOSTNAME 
+    port: nconf.get('server').port
+    livereload: nconf.get('server').livereload
+    hostname: nconf.get('server').hostname
 
   dev:
     options:
-      open: Boolean(process.env.SERVER_OPEN_ENABLED)
+      open: nconf.get('server').open
       base: [
-        process.env.GRUNT_TEMP_PATH,
-        process.env.GRUNT_BASE_PATH
+        nconf.get('app').tempDir,
+        nconf.get('app').basePath
       ]
 
   dist:
     options:
-      open: Boolean(process.env.SERVER_OPEN_ENABLED)
-      base: process.env.GRUNT_DIST_PATH
+      open: nconf.get('server').open
+      base: nconf.get('app').buildDir 

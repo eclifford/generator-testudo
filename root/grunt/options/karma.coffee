@@ -1,16 +1,25 @@
 #
-# grunt-contrib-requirejs
-# https://github.com/gruntjs/grunt-contrib-requirejs
+# Karma Task
+# 
+# The Karma task configures the Karma Runner for running unit tests.
 #
+# More information
+# - https://github.com/karma-runner/karma
+# - https://github.com/karma-runner/grunt-karma
+# 
+# @author Eric Clifford
+#
+nconf = require('nconf')
+
 module.exports =
   options:
     files: [
-      "#{process.env.GRUNT_TEMP_PATH}/common.js"
-      "#{process.env.GRUNT_TEMP_PATH}/tests/unit/runner.js"
-      {pattern: "#{process.env.GRUNT_TEMP_PATH}/**/*.{js,tmpl,json,html}", included: false}
+      "#{nconf.get('app').tempDir}/common.js"
+      "#{nconf.get('app').tempDir}/tests/unit/runner.js"
+      {pattern: "#{nconf.get('app').tempDir}/**/*.{js,tmpl,json,html}", included: false}
     ]
     exclude: [
-      "#{process.env.GRUNT_TEMP_PATH}/vendor/**/*"
+      "#{nconf.get('app').tempDir}/vendor/**/*"
     ]
 
     frameworks: [
@@ -30,13 +39,13 @@ module.exports =
 
     coverageReporter:
       type: 'html'
-      dir: "#{process.env.GRUNT_TEMP_PATH}/tests/coverage/"
+      dir: "#{nconf.get('app').tempDir}/tests/coverage/"
 
     port: 9999
 
   unit:
     autoWatch: true
-    browsers: [process.env.TESTING_UNIT_BROWSERS]
+    browsers: nconf.get('testing').unitBrowsers 
 
   single:
-    browsers: process.env.TESTING_UNIT_BROWSERS
+    browsers: nconf.get('testing').unitBrowsers

@@ -1,8 +1,21 @@
 #
 # Server Task
-# Task for loading a local server
+# 
+# Start a server without starting watchers or compiling
+# 
+# @author Eric Clifford
 #
 module.exports = (grunt, target) ->
   grunt.registerTask "server", (target) ->
-    return grunt.task.run(["build", "connect:dist:keepalive"]) if target is "dist"
-    grunt.task.run ["clean:dev", "concurrent:dev", "includereplace", "connect:dev"]
+    if target is "dist"
+      grunt.task.run([
+        "build", 
+        "connect:dist:keepalive"
+      ]) 
+    else 
+      grunt.task.run [
+        "clean:dev", 
+        "concurrent:dev", 
+        "includereplace",
+         "connect:dev"
+       ]

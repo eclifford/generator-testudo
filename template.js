@@ -108,7 +108,7 @@ exports.template = function(grunt, init, done) {
       "wd": "~0.2.8",
       "chai": "~1.8.1",
       "chai-as-promised": "~4.1.0",
-      "dotenv": "~0.2.3"
+      "nconf": "~0.6.9"
     };
 
     // Files to copy (and process).

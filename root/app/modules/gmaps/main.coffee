@@ -75,7 +75,7 @@ define [
     # center map on images
     #
     centerMap: (data) ->
-      map.setCenter data.photo.get('location').latitude,
+      @map.setCenter data.photo.get('location').latitude,
         data.photo.get('location').longitude
 
     #

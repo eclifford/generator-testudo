@@ -1,7 +1,17 @@
 #
-# grunt-contrib-symlink
-# https://github.com/gruntjs/grunt-contrib-symlink
+# Symlink Task
+# 
+# To avoid the moving of all files in bower_components around all the time and
+# the overhead of adding file watchers to that folder we symlink it into our
+# working diretory (.tmp).
 #
+# More information
+# - https://github.com/gruntjs/grunt-contrib-symlink
+#
+# @author Eric Clifford
+#
+nconf = require('nconf')
+
 module.exports =
   options:
     force: true
@@ -10,7 +20,7 @@ module.exports =
   expanded:
     files: [
       expand: true
-      cwd: "#{process.env.GRUNT_BASE_PATH}/vendor/bower_components"
+      cwd: "#{nconf.get('app').basePath}/vendor/bower_components"
       src: ['*']
-      dest: "#{process.env.GRUNT_TEMP_PATH}/vendor/bower_components"
+      dest: "#{nconf.get('app').tempDir}/vendor/bower_components"
     ]

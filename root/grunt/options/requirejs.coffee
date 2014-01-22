@@ -1,8 +1,18 @@
 #
-# grunt-contrib-requirejs
-# https://github.com/gruntjs/grunt-contrib-requirejs
+# RequireJS Task
+# 
+# This task configures the R.JS build properties and automatically
+# globs modules in the 'modules/' directory to populate the R.JS 
+# modules.
+#
+# More information
+# - https://github.com/gruntjs/grunt-contrib-requirejs
+# - https://github.com/jrburke/r.js/blob/master/build/example.build.js
+# 
+# @author Eric Clifford
 #
 glob = require 'glob'
+nconf = require('nconf')
 
 # Setup modules array with default main module
 modules = [
@@ -11,7 +21,7 @@ modules = [
 
 # Find all modules and add them to the r.js module defintions
 glob.sync("modules/**/main.coffee",
-  cwd: process.env.GRUNT_BASE_PATH
+  cwd: nconf.get('app').basePath
 ).forEach (option) ->
   modules.push
     name: option.replace('.coffee', '')
@@ -22,10 +32,10 @@ module.exports =
   dist:
     options:
       # appDir: '<%= grunt.settings.paths.tempDir %>'
-      baseUrl: process.env.GRUNT_TEMP_PATH
-      mainConfigFile: "#{process.env.GRUNT_TEMP_PATH}/common.js"
+      baseUrl: nconf.get('app').tempDir
+      mainConfigFile: "#{nconf.get('app').tempDir}/common.js"
       fileExclusionRegExp: new RegExp("tests/*")
-      dir: process.env.GRUNT_DIST_PATH
+      dir: nconf.get('app').distDir
       skipDirOptimize: true
       optimizeCss: 'none'
       removeCombined: false

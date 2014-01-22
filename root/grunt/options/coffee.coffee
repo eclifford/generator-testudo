@@ -1,14 +1,22 @@
 #
-# grunt-contrib-coffee
-# https://github.com/gruntjs/grunt-contrib-coffee
+# Coffee Task
+# 
+# The coffee task is used to compile CoffeeScript
+# 
+# More information
+# - https://github.com/gruntjs/grunt-contrib-coffee
 #
+# @author Eric Clifford
+#
+nconf = require('nconf')
+
 module.exports =
   dev:
     expand: true
-    cwd: process.env.GRUNT_BASE_PATH
+    cwd: "app"
     src: [
       "**/*.coffee"
       "!vendor/**/*.coffee"
     ]
-    dest: process.env.GRUNT_TEMP_PATH
+    dest: ".tmp"
     ext: ".js"

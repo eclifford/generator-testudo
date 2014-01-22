@@ -1,15 +1,24 @@
 #
-# grunt-contrib-copy
-# https://github.com/gruntjs/grunt-contrib-copy
+# Copy Task
+# 
+# The Copy task moves files that are not compiled into position for 
+# builds
 #
+# More information
+# - https://github.com/gruntjs/grunt-contrib-copy
+# 
+# @author Eric Clifford
+#
+nconf = require('nconf')
+
 module.exports = 
   assets:
     expand: true
     dot: true
-    cwd: process.env.GRUNT_BASE_PATH
+    cwd: nconf.get('app').basePath
     src: [
       '**/*'
       '!{vendor,_*}/**/*'
       '!**/*.{coffee,scss,sass,feature,md}'
     ]
-    dest: process.env.GRUNT_TEMP_PATH
+    dest: nconf.get('app').tempDir

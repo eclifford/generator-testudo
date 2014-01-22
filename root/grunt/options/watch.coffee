@@ -1,12 +1,22 @@
 #
-# grunt-contrib-watch
-# https://github.com/gruntjs/grunt-contrib-watch
+# Watch Task
+# 
+# The watch task adds file watchers to all compileable artifacts and works proxies
+# requests to the appropriate compilation tasks. The watch task also works in
+# conjuction with Connect to enable livereloading of files upon compilation.
 #
+# More information
+# - https://github.com/gruntjs/grunt-contrib-watch
+# 
+# @author Eric Clifford
+#
+nconf = require('nconf')
+
 module.exports =
   options:
     spawn: false
-    cwd: process.env.GRUNT_BASE_PATH
-    livereload: Boolean(process.env.SERVER_LIVERELOAD_ENABLED)
+    cwd: nconf.get('app').basePath
+    livereload: nconf.get('server').livereload 
 
   coffee:
     files: [
@@ -14,7 +24,7 @@ module.exports =
       'modules/**/*.coffee'
       'main.coffee'
     ]
-    tasks: if Boolean(process.env.PROJECT_LINTING_ENABLED) then ['coffeelint', 'coffee:dev'] else ['coffee:dev']
+    tasks: if nconf.get('app').linting then ['coffeelint', 'coffee:dev'] else ['coffee:dev']
 
   sass:
     files: [
