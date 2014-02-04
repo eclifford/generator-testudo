@@ -8,8 +8,7 @@
   "server": {
     "hostname": "localhost",
     "port": "3000",
-    "livereload": true, 
-    "livereloadPort": "35729",
+    "livereload": true,
     "open": true
   },
   "testing": {
