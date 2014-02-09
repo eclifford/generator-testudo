@@ -1,0 +1,37 @@
+{
+  "app": {
+    "appDir": "./app",
+    "buildDir": "./build"
+  },
+  "coffee": {
+    "paths": [
+      "modules/**/*.coffee",
+      "*.coffee"
+    ],
+    "linting": true
+  },
+  "sass": {
+    "paths": [
+      "*.scss"
+    ]
+  },
+  "jade": {
+    "paths": [
+      "**/*.jade"
+    ]
+  },
+  "server": {
+    "hostname": "localhost",
+    "port": "3000",
+    "livereload": true,
+    "open": true
+  },
+  "testing": {
+    "unitBrowsers": ["PhantomJS"],
+    "acceptanceBrowser": "firefox",
+    "acceptanceLogging": true
+  },
+  "env": {
+    "SELENIUM_VERSION": "2.39.0:f2391600481dd285002d04b66916fc4286ff70ce"
+  }
+}
