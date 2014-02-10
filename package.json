@@ -55,7 +55,8 @@
     "gulp-coffeelint": "~0.2.0",
     "gulp-plumber": "~0.5.6",
     "gulp-if": "0.0.5",
-    "gulp-livereload": "~1.0.1"
+    "gulp-livereload": "~1.0.1",
+    "gulp-rimraf": "0.0.9"
   },
   "engines": {
     "node": ">=0.8.0"

@@ -1,8 +1,10 @@
-module.exports = function(gulp, plugins) { 
+module.exports = function() { 
+  var gulp = require('gulp');
   var nconf = require('nconf');
+  var clean = require('gulp-rimraf');
 
   gulp.task('clean', function() {
     gulp.src(nconf.get('app').buildDir, {read: false})
-      .pipe(plugins.clean({force: true}));
+      .pipe(clean({force: true}));
   });
 }

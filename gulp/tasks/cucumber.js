@@ -1,4 +1,5 @@
-module.exports = function(gulp, plugins) { 
+module.exports = function() { 
+  var gulp = require('gulp');
   var child_process = require('child_process');
 
   gulp.task('cucumber', ['selenium-launcher'], function() {

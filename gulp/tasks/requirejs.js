@@ -1,4 +1,4 @@
-module.exports = function(plugins) { 
+module.exports = function() { 
   var gulp = require('gulp');
   var nconf = require('nconf');
   var requirejs = require('requirejs');

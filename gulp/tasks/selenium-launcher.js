@@ -1,4 +1,5 @@
-module.exports = function(gulp, plugins) { 
+module.exports = function() { 
+  var gulp = require('gulp');
   var seleniumLauncher = require('selenium-launcher');
 
   gulp.task('selenium-launcher', function(cb) {

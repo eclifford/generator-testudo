@@ -1,5 +1,8 @@
-module.exports = function(gulp, plugins) { 
-  gulp.task('connect', plugins.connect.server({
+module.exports = function() { 
+  var gulp = require('gulp');
+  var connect = require('gulp-connect');
+  
+  gulp.task('connect', connect.server({
     port: 1337,
     livereload: false,
     middleware: function(connect, options) {
@@ -10,3 +13,4 @@ module.exports = function(gulp, plugins) {
     }
   }));
 }
+
