@@ -14,6 +14,7 @@
     "underscore-amd": "~1.5.2",
     "backbone.wreqr": "~0.2.0",
     "backbone.babysitter": "~0.0.6",
-    "requirejs-tpl": "latest"
+    "requirejs-tpl": "latest",
+    "require-cs": "~0.4.4"
   }
 }

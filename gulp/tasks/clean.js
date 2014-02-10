@@ -3,6 +3,6 @@ module.exports = function(gulp, plugins) {
 
   gulp.task('clean', function() {
     gulp.src(nconf.get('app').buildDir, {read: false})
-      .pipe(plugins.clean());
+      .pipe(plugins.clean({force: true}));
   });
 }

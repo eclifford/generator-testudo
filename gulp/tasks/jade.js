@@ -6,6 +6,13 @@ module.exports = function(gulp, plugins) {
     gulp.src(nconf.get('jade').paths, {cwd: './app', base: './app'})
       .pipe(plugins.watch())
       .pipe(plugins.jade()).on('error', gutil.log)
-      .pipe(gulp.dest(nconf.get('app').buildDir));
+      .pipe(gulp.dest(nconf.get('app').buildDir))
+      .pipe(plugins.if(nconf.get('server').livereload, plugins.livereload()));
+  });
+
+  gulp.task('jade-build', function() {
+    gulp.src(nconf.get('jade').paths, {cwd: './app', base: './app'})
+      .pipe(plugins.jade()).on('error', gutil.log)
+      .pipe(gulp.dest(nconf.get('app').buildDir))
   });
 }

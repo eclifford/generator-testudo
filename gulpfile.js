@@ -4,15 +4,22 @@ var plugins = require("gulp-load-plugins")();
 
 require('./app/common/manager.js')();
 
-require('./gulp/tasks/clean')(gulp, plugins);
-require('./gulp/tasks/coffee')(gulp, plugins);
-require('./gulp/tasks/sass')(gulp, plugins);
-require('./gulp/tasks/connect')(gulp, plugins);
-require('./gulp/tasks/jade')(gulp, plugins);
-require('./gulp/tasks/karma')(gulp, plugins);
-require('./gulp/tasks/cucumber')(gulp, plugins);
-require('./gulp/tasks/selenium-launcher')(gulp, plugins);
+// Load all the custom task files
+var files = glob.sync("./gulp/tasks/*.js").forEach(function(file) {
+  require(file)(gulp, plugins);
+});
 
-gulp.task('default', ['coffee', 'sass', 'jade', 'connect']);
+gulp.task('default', ['clean'], function() {
+  gulp.start('coffee', 'sass', 'jade', 'connect'); 
+});
+
+// gulp.task('watch', function() {
+  // gulp.watch('app/modules/**/*.coffee', ['coffee-build']);
+// });
+
+gulp.task('build', function() {
+  gulp.start('requirejs');
+});
+
 gulp.task('test:acceptance', ['connect', 'selenium-launcher', 'cucumber']);
-gulp.task('build', ['coffee']);
+
