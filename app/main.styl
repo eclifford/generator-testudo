@@ -1,9 +1,11 @@
 @import 'nib'
 
+// @import 'modules/**/*'
+
 global-reset()
 
 body 
-  background-color: #222
+  background-color: #222 
   margin: 0
   font-family: 'Open sans',sans-serif;
   font-size: 16px;
@@ -11,21 +13,31 @@ body
   color: rgb(51,51,51)
 
 h1, h2, h3, h4, h5
-  font-family: 'Coda', sans-serif
-  font-variant: small-caps
+  font-family: 'Droid Sans', sans-serif
+  color: #d13c3c
 
 .clearfix
   clearfix()
+
+.box
+  display: inline-block
+  max-width: 50% 
+  margin-bottom: 20px
+
 
 h1
   font-size: 54px
   font-weight: 400
 
+h2 
+  font-size: 24px
+
 .site-nav
   background-color: #d13c3c
   padding: 10px
   h1
-    font-size: 40px
+    font-family: 'Coda', sans-serif
+    font-size: 30px
     color: #fff
     float: left
 
@@ -40,12 +52,12 @@ h1
         line-height: 40px
 
 .container 
-  width: 800px
+  max-width: 800px
   margin-left: auto
   margin-right: auto
 
 .content
   background-color: #fff
+  padding-top: 20px
+  padding-bottom: 20px
 
-.tout h1, h2 
-  text-align: center
