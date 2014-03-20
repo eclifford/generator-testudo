@@ -4,13 +4,15 @@ module.exports = function() {
   var gutil = require('gulp-util');
   var jade = require('gulp-jade');
   var watch = require('gulp-watch');
+  var gulpif = require('gulp-if');
+  var livereload = require('gulp-livereload');
 
-  gulp.task('jade', ['clean'], function() {
+  gulp.task('jade', function() {
     gulp.src(nconf.get('jade').paths, {cwd: './app', base: './app'})
       .pipe(watch())
       .pipe(jade()).on('error', gutil.log)
       .pipe(gulp.dest(nconf.get('app').buildDir))
-      // .pipe(plugins.if(nconf.get('server').livereload, plugins.livereload()));
+      .pipe(gulpif(nconf.get('server').livereload, livereload()));
   });
 
   gulp.task('jade-build', function() {

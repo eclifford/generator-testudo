@@ -1,10 +1,11 @@
 module.exports = function() { 
-  var gulp = require('gulp');
-  var nconf = require('nconf');
-  var clean = require('gulp-rimraf');
+  var gulp    = require('gulp'),
+      nconf   = require('nconf'),
+      rimraf  = require('rimraf');
 
-  gulp.task('clean', function() {
-    gulp.src(nconf.get('app').buildDir, {read: false})
-      .pipe(clean({force: true}));
-  });
+  gulp.task('clean', function(cb) {
+    rimraf(nconf.get('app').buildDir, function() {
+      cb();
+    });
+  });;
 }

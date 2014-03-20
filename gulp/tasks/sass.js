@@ -5,6 +5,8 @@ module.exports = function() {
   var sass = require('gulp-sass');
   var nconf = require('nconf');
   var gutil = require('gulp-util');
+  var gulpif = require('gulp-if');
+  var livereload = require('gulp-livereload');
 
   gulp.task('sass', function() {
     gulp.src(nconf.get('sass').paths, {cwd: './app', base: './app'})
@@ -12,7 +14,7 @@ module.exports = function() {
       .pipe(watch())
       .pipe(sass()).on('error', gutil.log)
       .pipe(gulp.dest(nconf.get('app').buildDir))
-      // .pipe(plugins.if(nconf.get('server').livereload, plugins.livereload()));
+      .pipe(gulpif(nconf.get('server').livereload, livereload()));
   });
 
   gulp.task('sass-build', function() {
