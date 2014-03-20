@@ -24,9 +24,11 @@ module.exports =
 
     frameworks: [
       'requirejs'
-      'mocha'
+      'chai-sinon'
       'chai-jquery'
-      'sinon-chai'
+      'chai'
+      'mocha'
+      'jquery-1.8.3'
     ]
 
     reporters: [

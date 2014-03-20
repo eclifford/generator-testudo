@@ -15,5 +15,6 @@ module.exports =
   dev: [
     'stylus'
     'coffee'
+    'jade'
     'copy:assets'
   ]

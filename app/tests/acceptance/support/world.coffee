@@ -1,6 +1,8 @@
 wd = require('wd')
 chai = require('chai')
 nconf = require('nconf')
+require('colors')
+require('../../../../config/manager')()
 chaiAsPromised = require("chai-as-promised")
 
 remote = wd.promiseChainRemote(process.env.SELENIUM_HUB)
@@ -9,7 +11,7 @@ chai.should()
 
 chaiAsPromised.transferPromiseness = wd.transferPromiseness
 
-World = World = (callback) ->
+World = (callback) ->
   @browser = remote
 
   if nconf.get('testing').acceptanceLogging

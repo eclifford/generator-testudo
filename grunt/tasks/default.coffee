@@ -11,8 +11,6 @@ module.exports = (grunt) ->
   [
     'clean'
     'concurrent:dev'
-    'jade'
-    'symlink'
     'connect:dev'
     'watch'
   ]

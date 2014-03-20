@@ -31,11 +31,10 @@ module.exports =
   # Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
   dist:
     options:
-      # appDir: '<%= grunt.settings.paths.tempDir %>'
       baseUrl: nconf.get('app').tempDir
       mainConfigFile: "#{nconf.get('app').tempDir}/common.js"
       fileExclusionRegExp: new RegExp("tests/*")
-      dir: nconf.get('app').distDir
+      dir: nconf.get('app').buildDir
       skipDirOptimize: true
       optimizeCss: 'none'
       removeCombined: false

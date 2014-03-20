@@ -14,5 +14,5 @@ module.exports = (grunt) ->
       grunt.task.run([
         'selenium-launch', 
         'connect:dev', 
-        'cucumberjs'
+        'cukejs'
       ])
