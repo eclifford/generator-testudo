@@ -1,0 +1,10 @@
+{
+  "name": "testudo",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "requirejs": "~2.1.9",
+    "jquery": "~1.10.2",
+    "bronson": "~2.0.12"
+  }
+}
