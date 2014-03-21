@@ -15,11 +15,11 @@
 nconf = require('nconf')
 
 module.exports = 
-  # TODO: move the lint configuration options to user settings with reasonable
-  # defaults
   options:
-    'max_line_length':
-      'level': 'ignore'
+    configFile: '.coffeelint.json'
   dev:
     files:
-      src: ["#{nconf.get('app').basePath}/{modules,tests}/**/*.coffee"]
+      src: [
+        "#{nconf.get('app').basePath}/**/*.coffee"
+        "!node_modules/**/*.coffee"
+      ]
