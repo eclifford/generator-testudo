@@ -15,46 +15,10 @@
 
 ### Install Testudo
 
-_Install the **latest** version of **grunt-init**. You **MUST** download from git as it is newer than what is on **NPM** currently._
-
 ```shell
-$ npm install -g git://github.com/gruntjs/grunt-init.git
-```
-
-_Clone the repo into your **grunt-init** templates_
-
-```shell
-$ git clone git@github.com:eclifford/testudo.git ~/.grunt-init/testudo
-```
-
-### Create Project with Testudo
-
-Next create your project folder and initialize Testudo inside of it to scaffold out your project. Pay attention to all the prompts as they dictate how best to configure your Testudo project.
-
-```shell
-$ mkdir my_project
-$ cd my_project
-$ grunt-init testudo
-```
-
-Once your project is setup you'll need to next install all the dependencies.
-
-_Install node dependencies_
-
-```shell
-$ npm install
-```
-
-_Install bower dependencies_
-
-```shell
-$ bower install
-```
-
-_Install ruby dependencies_
-
-```shell
-$ bundle install
+$ npm install -g yo 
+$ npm install -g generator-testudo
+$ yo testudo 
 ```
 
 _Start watcher/server_

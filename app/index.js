@@ -42,8 +42,8 @@ var TestudoGenerator = yeoman.generators.Base.extend({
     this.directory('grunt', 'grunt');
     this.template('_package.json', 'package.json');
     this.template('_bower.json', 'bower.json');
-    this.copy('.htaccess', '.htacess');
-    this.copy('.gitignore', '.gitignore');
+    this.copy('.htaccess', '.htaccess');
+    this.copy('gitignore', '.gitignore');
     this.copy('.coffeelint.json', '.coffeelint.json');
     this.copy('.bowerrc', '.bowerrc');
     this.copy('robots.txt', 'robots.txt');
