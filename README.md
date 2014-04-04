@@ -2,7 +2,7 @@
 
 ![Testudo](http://gb.fotolibra.com/images/previews/50037-roman-soldiers-in-testudo-formation-illustration.jpeg)
 
-> Testudo is a Grunt based boilerplate for the building of modern, modular, testable web applications. Testudo has first class support for all of the modern tools you know and love such as RequireJS, CoffeeScript, Karma, Grunt, Bower, SASS, Bootstrap and many more.
+> Testudo is a Yeoman based project scaffolder for the building of modern, modular, testable web applications. Testudo has first class support for all of the modern tools you know and love such as RequireJS, CoffeeScript, Karma, Grunt, Bower, SASS, Styus and many more.
 
 ## Quick Start
 
@@ -10,12 +10,11 @@
 
 - [Node](http://nodejs.org/download/)
 - [Grunt](http://gruntjs.com/getting-started)
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Bundler](http://bundler.io/)
+- [Yeoman](http://yeoman.io/)
 
 ### Install Testudo
 
-```shell
+```bash
 $ npm install -g yo 
 $ npm install -g generator-testudo
 $ yo testudo 
@@ -23,7 +22,7 @@ $ yo testudo
 
 _Start watcher/server_
 
-```shell
+```bash
 $ grunt
 ```
 
@@ -39,8 +38,9 @@ In Testudo the creation, testing, management and optimization of these widgets i
 
 - Full AMD compatibility with [RequireJS](http://requirejs.org)
 - (Optional) [BronsonJS](http://www.bronsonjs.com) management layer for modules
+- Integrated module scaffolder for easy creation of new modules 
 - Dynamic management of **R.JS** build layer for modules
-- Dynamic management of **SASS** imports for modules
+- Dynamic importing of **SASS** and **Stylus** module stylesheets
 
 ### Test First
 
@@ -48,7 +48,6 @@ Testudo understands how important testing is and how frustrating it can be to se
 
 **Key Features**
 
-- Write tests where you want them.. next to your app code
 - Write your unit tests in full AMD
 - Karma Test Runner
 - Chai Assertions with Chai-Jquery and Chai-Sinon
