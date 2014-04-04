@@ -18,12 +18,17 @@
     "cucumber",
     "karma"
   ],
+  "bin": {
+    "testudo": "./bin/testudo.js"
+  },
   "dependencies": {
     "yeoman-generator": "~0.16.0",
-    "chalk": "~0.4.0"
+    "chalk": "~0.4.0",
+    "commander": "^2.2.0"
   },
   "peerDependencies": {
-    "yo": ">=1.0.0"
+    "yo": ">=1.0.0",
+    "grunt-cli": ">=0.1.13"
   },
   "engines": {
     "node": ">=0.10.0"
