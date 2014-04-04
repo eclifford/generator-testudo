@@ -23,7 +23,7 @@ module.exports = {
     tasks: nconf.get('app').linting ? ['newer:coffeelint', 'newer:coffee:dev'] : ['newer:coffee:dev']
   },<% } %>
   <% if(includeStylus) { %>stylus: {
-    files: ['assets/{,*/}/', 'assets/**/*.{styl}', 'modules/{,*/}/', 'modules/**/*.{styl}', 'main.{styl}'],
+    files: ['assets/{,*/}/', 'assets/**/*.styl', 'modules/{,*/}/', 'modules/**/*.styl', 'main.styl'],
     tasks: ['stylus:dev']
   },<% } %>
   <% if(includeSASS) { %>sass: {
