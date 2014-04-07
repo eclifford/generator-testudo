@@ -5,6 +5,10 @@
   "devDependencies": {
     "requirejs": "~2.1.9",
     "jquery": "~1.10.2",
-    "bronson": "~2.0.12"
+    "bronson": "~2.0.12",
+    "underscore": "~1.6.0",
+    "backbone": "~1.1.2",
+    "backbone.localStorage": "~1.1.7",
+    "requirejs-text": "~2.0.10"
   }
 }

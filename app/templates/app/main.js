@@ -8,6 +8,9 @@ require(['common'], function(common) {
     'jquery', 
     'bronson'
   ], function($, Bronson) {
-
+    Bronson.load({
+      id: 'todos',
+      path: 'modules/todos/main'
+    });
   });
 });

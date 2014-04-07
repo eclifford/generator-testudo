@@ -7,5 +7,5 @@
 // @author Eric Clifford
 //
 module.exports = function(grunt) {
-  return grunt.registerTask('build', ['clean:dist', 'concurrent:dev', 'symlink', 'requirejs']);
+  return grunt.registerTask('build', ['clean:dist', 'concurrent:dev', 'copy', 'requirejs']);
 };

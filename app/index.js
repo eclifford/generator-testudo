@@ -75,8 +75,8 @@ TestudoGenerator.prototype.questions = function() {
 
 TestudoGenerator.prototype.app = function() {
   this.mkdir('app');
-  this.mkdir('app/assets');
-  this.mkdir('app/modules');
+  this.directory('app/assets');
+  this.directory('app/modules');
   this.mkdir('app/views');
   this.mkdir('app/tests');
   this.directory('app/vendor', 'app/vendor');
@@ -141,5 +141,5 @@ TestudoGenerator.prototype.tests = function() {
 };
 
 TestudoGenerator.prototype.module = function() {
-  this.invoke("testudo:module", {args: ["Sample"]});
+  // this.invoke("testudo:module", {args: ["Sample"]});
 };
