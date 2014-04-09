@@ -16,7 +16,7 @@ module.exports = {
     expand: true,
     dot: true,
     cwd: nconf.get('app').basePath,
-    src: ['**/*', '!{vendor,_*}/**/*', '!**/*.{coffee,scss,sass,feature,md}'],
+    src: ['**/*', '!**/*.{coffee,scss,sass,feature,md,styl,jade}'],
     dest: nconf.get('app').tempDir
   }
 };

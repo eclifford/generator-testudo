@@ -8,3 +8,7 @@ require ['common'], (common) ->
     'jquery'
     'bronson'
   ], ($, Bronson) ->
+
+    Bronson.load
+      id: 'todos'
+      path: 'modules/todos/main'

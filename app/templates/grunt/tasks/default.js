@@ -7,5 +7,5 @@
 // @author Eric Clifford
 //
 module.exports = function(grunt) {
-  return grunt.registerTask('default', ['clean', 'concurrent:dev', 'connect:dev', 'watch']);
+  return grunt.registerTask('default', ['clean', 'concurrent:dev', 'connect:dev', 'karma:unit:start', 'watch']);
 };

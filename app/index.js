@@ -75,10 +75,10 @@ TestudoGenerator.prototype.questions = function() {
 
 TestudoGenerator.prototype.app = function() {
   this.mkdir('app');
-  this.mkdir('app/assets');
-  this.mkdir('app/modules');
+  this.directory('app/assets');
+  this.directory('app/modules');
   this.mkdir('app/views');
-  this.mkdir('app/tests');
+  this.mkdir('test');
   this.directory('app/vendor', 'app/vendor');
   this.directory('grunt', 'grunt');
   this.directory('config', 'config');
@@ -117,29 +117,30 @@ TestudoGenerator.prototype.scripts = function() {
   if(this.coffee) {
     this.copy('app/main.coffee', 'app/main.coffee');
     this.copy('app/common.coffee', 'app/common.coffee');
-    this.copy('.coffeelint.json', '.coffeelint.json');
+    this.copy('.coffeelint', '.coffeelint');
   } else {
     this.copy('app/main.js', 'app/main.js');
     this.copy('app/common.js', 'app/common.js');
+    this.copy('.jshintrc', '.jshintrc');
   }
   this.copy('Gruntfile.js', 'Gruntfile.js');
 };
 
 TestudoGenerator.prototype.tests = function() {
   if(this.coffee) {
-    this.copy('app/tests/acceptance/step_definitions/sample.coffee', 'app/tests/acceptance/step_definitions/sample.coffee');
-    this.copy('app/tests/acceptance/support/world.coffee', 'app/tests/acceptance/support/world.coffee');
-    this.copy('app/tests/unit/specs/sampleSpec.coffee', 'app/tests/unit/specs/sampleSpec.coffee');
-    this.copy('app/tests/unit/runner.coffee', 'app/tests/unit/runner.coffee');
+    this.copy('test/acceptance/step_definitions/sample.coffee', 'test/acceptance/step_definitions/sample.coffee');
+    this.copy('test/acceptance/support/world.coffee', 'test/acceptance/support/world.coffee');
+    this.copy('test/unit/specs/sampleSpec.coffee', 'test/unit/specs/sampleSpec.coffee');
+    this.copy('test/unit/runner.coffee', 'test/unit/runner.coffee');
   } else {
-    this.copy('app/tests/acceptance/step_definitions/sample.js', 'app/tests/acceptance/step_definitions/sample.js');
-    this.copy('app/tests/acceptance/support/world.js', 'app/tests/acceptance/support/world.js');
-    this.copy('app/tests/unit/specs/sampleSpec.js', 'app/tests/unit/specs/sampleSpec.js');
-    this.copy('app/tests/unit/runner.js', 'app/tests/unit/runner.js');
+    this.copy('test/acceptance/step_definitions/sample.js', 'test/acceptance/step_definitions/sample.js');
+    this.copy('test/acceptance/support/world.js', 'test/acceptance/support/world.js');
+    this.copy('test/unit/specs/sampleSpec.js', 'test/unit/specs/sampleSpec.js');
+    this.copy('test/unit/runner.js', 'test/unit/runner.js');
   }
-  this.copy('app/tests/acceptance/features/sample.feature', 'app/tests/acceptance/features/sample.feature');
+  this.copy('test/acceptance/features/sample.feature', 'test/acceptance/features/sample.feature');
 };
 
 TestudoGenerator.prototype.module = function() {
-  this.invoke("testudo:module", {args: ["Sample"]});
+  // this.invoke("testudo:module", {args: ["Sample"]});
 };

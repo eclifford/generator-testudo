@@ -16,7 +16,7 @@ var nconf = require('nconf');
 
 module.exports = {
   options: {
-    configFile: '.coffeelint.json'
+    configFile: '.coffeelint'
   },
   dev: {
     files: {

@@ -22,11 +22,11 @@ var modules = [
 ];
 
 // Find all modules and add them to the r.js module defintions
-glob.sync("modules/**/main.coffee", {
+glob.sync("modules/**/main.{coffee,js}", {
   cwd: nconf.get('app').basePath
 }).forEach(function(option) {
   return modules.push({
-    name: option.replace('.coffee', ''),
+    name: option.replace('.js', '').replace('.coffee', ''),
     exclude: ['main']
   });
 });
@@ -40,7 +40,7 @@ module.exports = {
       dir: nconf.get('app').buildDir,
       skipDirOptimize: true,
       optimizeCss: 'none',
-      removeCombined: false,
+      removeCombined: true,
       preserveLicenseComments: false,
       useStrict: true,
       optimize: "uglify2",

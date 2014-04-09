@@ -2,41 +2,17 @@ doctype
 html(lang="en")
   head
     link(href='main.css', rel='stylesheet')
-    link(href='http://fonts.googleapis.com/css?family=Coda', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700', rel='stylesheet', type='text/css')
     script(data-main='/main', src='/vendor/bower_components/requirejs/require.js')
   body
     include views/_partials/menu.jade
     div.content
       div.container
-        div.box.test
-          h3 Modular
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
-
-        div.box
-          h3 Testable
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
-
-        div.box
-          h3 Modern
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
-
-        div.box
-          h3 Modern
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
-        
-        div.box
-          h3 Modern
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
-
-        div.box
-          h3 Modern
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
-
-        div.box
-          h3 Modern
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
-
-        div.box
-          h3 Modern
-          p A lean, mobile-friendly HTML template; optimized Google Analytics snippet; placeholder touch-device icon; and docs covering dozens of extra tips and tricks.
+        section#todoapp
+          header#header
+            h1=todos
+            input#new-todo(placeholder="What needs to be done?", autofocus)
+          section#main
+            input#toggle-all(type='checkbox')
+            label(for="toggle-all")
+            ul#todo-list
+          footer#footer
