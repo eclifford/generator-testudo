@@ -3,7 +3,7 @@
 #
 # @author {%= author_name %}
 #
-require ['common'], (common) ->
+require ['config'], (common) ->
   require [
     'jquery'
     'bronson'
