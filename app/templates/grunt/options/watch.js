@@ -16,14 +16,15 @@ module.exports = {
   options: {
     spawn: false,
     cwd: nconf.get('app').basePath,
-    livereload: nconf.get('server').livereload
+    livereload: nconf.get('server').livereload,
+    livereloadOnError: false
   },
   <% if(coffee) { %>coffee: {
-    files: ['assets/{,*/}/', 'assets/**/*.coffee', 'modules/{,*/}/', 'modules/**/*.coffee', 'main.coffee'],
-    tasks: nconf.get('app').linting ? ['newer:coffeelint', 'newer:coffee:dev'] : ['newer:coffee:dev']
+    files: ['assets/{,*/}/', 'assets/**/*.coffee', 'modules/{,*/}/', 'modules/**/*.coffee', '*.coffee'],
+    tasks: nconf.get('app').linting ? ['newer:coffeelint', 'newer:coffee:dev', 'karma:unit:run'] : ['newer:coffee:dev', 'karma:unit:run']
   },<% } %>
   <% if(includeStylus) { %>stylus: {
-    files: ['assets/{,*/}/', 'assets/**/*.styl', 'modules/{,*/}/', 'modules/**/*.styl', 'main.styl'],
+    files: ['assets/{,*/}/', 'assets/**/*.styl', 'modules/{,*/}/', 'modules/**/*.styl', '*.styl'],
     tasks: ['stylus:dev']
   },<% } %>
   <% if(includeSASS) { %>sass: {
@@ -31,7 +32,12 @@ module.exports = {
     tasks: ['sass:dev']
   },<% } %>
   js: {
-    files: ['modules/{,*/}/', 'modules/**/*.js']
+    files: ['modules/{,*/}/', 'modules/**/*.js']<% if(!coffee) { %>,
+    tasks: nconf.get('app').linting ? ['newer:jshint:js', 'karma:unit:run'] : ['karma:unit:run'] <% } %>
+  },
+  tests: {
+    files: ['../test/**/*.{js,coffee}'],
+    tasks: ['karma:unit:run']
   },
   jade: {
     files: ['pages/{,*/}/', 'pages/**/*.jade', 'index.jade'],

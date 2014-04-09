@@ -16,8 +16,8 @@ var nconf = require('nconf');
 module.exports = {
   "default": {
     options: {
-      features: "" + (nconf.get('app').basePath) + "/tests/acceptance/features",
-      steps: "" + (nconf.get('app').basePath) + "/tests/acceptance/step_definitions",
+      features: "test/acceptance/features",
+      steps: "test/acceptance/step_definitions",
       format: "pretty"
     }
   }

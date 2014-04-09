@@ -15,7 +15,7 @@ require.config
     'backboneLocalstorage': 'vendor/bower_components/backbone.localStorage/backbone.localStorage'
     'text': 'vendor/bower_components/requirejs-text/text'
 
-    shim: 
-      backboneLocalstorage: 
+    shim:
+      backboneLocalstorage:
         deps: ['backbone']
         exports: 'Store'

@@ -13,7 +13,7 @@
   },
   "testing": {
     "unitBrowsers": ["PhantomJS"],
-    "acceptanceBrowser": "firefox",
+    "acceptanceBrowser": "phantomjs",
     "acceptanceLogging": true
   },
   "env": {

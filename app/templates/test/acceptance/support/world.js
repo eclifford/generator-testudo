@@ -1,26 +1,16 @@
-var World, chai, chaiAsPromised, nconf, remote, wd;
-
-wd = require('wd');
-
-chai = require('chai');
-
-nconf = require('nconf');
+var wd = require('wd');
+var chai = require('chai');
+var nconf = require('../../../config/manager')();
+var chaiAsPromised = require("chai-as-promised");
+var remote = wd.promiseChainRemote(process.env.SELENIUM_HUB);
 
 require('colors');
 
-require('../../../../config/manager')();
-
-chaiAsPromised = require("chai-as-promised");
-
-remote = wd.promiseChainRemote(process.env.SELENIUM_HUB);
-
 chai.use(chaiAsPromised);
-
 chai.should();
-
 chaiAsPromised.transferPromiseness = wd.transferPromiseness;
 
-World = function(callback) {
+var World = function(callback) {
   this.browser = remote;
   if (nconf.get('testing').acceptanceLogging) {
     this.browser.on("status", function(info) {

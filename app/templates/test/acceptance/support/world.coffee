@@ -1,8 +1,7 @@
 wd = require('wd')
 chai = require('chai')
-nconf = require('nconf')
 require('colors')
-require('../../../../config/manager')()
+nconf = require('../../../config/manager')()
 chaiAsPromised = require("chai-as-promised")
 
 remote = wd.promiseChainRemote(process.env.SELENIUM_HUB)

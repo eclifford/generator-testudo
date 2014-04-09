@@ -1,4 +1,3 @@
-//
 // Karma Task
 // 
 // The Karma task configures the Karma Runner for running unit tests.
@@ -13,26 +12,41 @@ var nconf = require('nconf');
 
 module.exports = {
   options: {
-    files: [
-      "" + (nconf.get('app').tempDir) + "/common.js", "" + (nconf.get('app').tempDir) + "/tests/unit/runner.js", {
-        pattern: "" + (nconf.get('app').tempDir) + "/**/*.{js,tmpl,json,html}",
-        included: false
-      }
-    ],
-    exclude: ["" + (nconf.get('app').tempDir) + "/vendor/**/*"],
+    basePath: './',
     frameworks: ['requirejs', 'chai-sinon', 'chai-jquery', 'chai', 'mocha', 'jquery-1.8.3'],
     reporters: ['progress'],
+    preprocessors: {
+      "**/*.coffee": ["coffee"]
+    },
     coverageReporter: {
       type: 'html',
-      dir: "" + (nconf.get('app').tempDir) + "/tests/coverage/"
+      dir: "/test/unit/output/coverage/"
     },
-    port: 9999
+    port: 9877,
+    files: [{
+      pattern: nconf.get('app').basePath + '/common.{js,coffee}',
+      included: true
+    },
+    {
+      pattern: 'test/unit/specs/**/*.{js,coffee}',
+      included: false
+    },
+    {
+      pattern: nconf.get('app').basePath + '/**/*.{js,coffee,tmpl,json}',
+      included: false
+    },
+    {
+      pattern: "test/unit/runner.{js,coffee}"
+    }
+    ]
   },
   unit: {
-    autoWatch: true,
+    background: true,
     browsers: nconf.get('testing').unitBrowsers
   },
   single: {
+    autoWatch: false,
+    singleRun: true,
     browsers: nconf.get('testing').unitBrowsers
   }
 };

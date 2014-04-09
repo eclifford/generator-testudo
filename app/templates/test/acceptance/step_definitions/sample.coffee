@@ -8,17 +8,10 @@ module.exports = ->
 
   @When "I click on the map", (callback) ->
     @browser
-      .waitForElementById('maps')
-      .moveTo()
-      .buttonDown()
-      .waitForElementById('maps')
-      .buttonUp()
+      .elementById('new-todo')
+      .type('finish demo!')
+      .keys('\uE006')
       .nodeify(callback)
 
   @Then "I see instagram photos", (callback) ->
-    @browser
-      .hasElementByClassName('module-content')
-      .sleep(3000)
-      .fin =>
-        @browser.quit()
-      .done -> callback()
+    callback()
