@@ -3,7 +3,7 @@
 //
 // @author {%= author_name %}
 //
-require(['common'], function(common) {
+require(['config'], function(common) {
   return require([
     'jquery', 
     'bronson'

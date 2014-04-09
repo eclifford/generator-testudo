@@ -16,6 +16,7 @@ ModuleGenerator.prototype.createFiles = function() {
 
   if(this.config.get('coffee')) {
     this.copy('module.coffee', 'app/modules/' + moduleName + '/main.coffee');
+    this.template('moduleSpec.coffee', 'test/unit/specs/' + moduleName + '/' + moduleName + 'Spec.coffee');
   } else {
     this.copy('module.js', 'app/modules/' + moduleName + '/main.js');
   }

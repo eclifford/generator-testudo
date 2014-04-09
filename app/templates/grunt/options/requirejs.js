@@ -35,7 +35,7 @@ module.exports = {
   dist: {
     options: {
       baseUrl: nconf.get('app').tempDir,
-      mainConfigFile: "" + (nconf.get('app').tempDir) + "/common.js",
+      mainConfigFile: nconf.get('app:basePath') + "/config.js",
       fileExclusionRegExp: new RegExp("tests/*"),
       dir: nconf.get('app').buildDir,
       skipDirOptimize: true,

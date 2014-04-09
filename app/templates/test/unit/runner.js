@@ -12,7 +12,7 @@ for (file in window.__karma__.files) {
 }
 
 requirejs.config({
-  baseUrl: "/base",
+  baseUrl: "/base/app",
   deps: tests,
   callback: window.__karma__.start
 }, document.body.innerHTML += "<div id='fixtures'></div>");

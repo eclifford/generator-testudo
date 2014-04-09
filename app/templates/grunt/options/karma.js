@@ -24,7 +24,7 @@ module.exports = {
     },
     port: 9877,
     files: [{
-      pattern: nconf.get('app').basePath + '/common.{js,coffee}',
+      pattern: nconf.get('app:basePath') + '/config.js',
       included: true
     },
     {
@@ -32,7 +32,7 @@ module.exports = {
       included: false
     },
     {
-      pattern: nconf.get('app').basePath + '/**/*.{js,coffee,tmpl,json}',
+      pattern: nconf.get('app:basePath') + '/**/*.{js,coffee,tmpl,json}',
       included: false
     },
     {
@@ -42,11 +42,11 @@ module.exports = {
   },
   unit: {
     background: true,
-    browsers: nconf.get('testing').unitBrowsers
+    browsers: nconf.get('testing:unitBrowsers')
   },
   single: {
     autoWatch: false,
     singleRun: true,
-    browsers: nconf.get('testing').unitBrowsers
+    browsers: nconf.get('testing:unitBrowsers')
   }
 };

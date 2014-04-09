@@ -23,15 +23,13 @@ TestudoGenerator.prototype.init = function init() {
 TestudoGenerator.prototype.questions = function() {
   var done = this.async();
 
-  // have Yeoman greet the user
-  this.log(this.yeoman);
-
   // replace it with a short and sweet description of your generator
   this.log(chalk.magenta('Welcome to Testudo'));
 
   var prompts = [{
     name: 'appName',
-    message: 'What is the name of your app?'
+    message: 'What is the name of your app?',
+    default: 'myTestudoProject'
   },
   {
     type: 'confirm',
@@ -116,13 +114,12 @@ TestudoGenerator.prototype.stylesheets = function() {
 TestudoGenerator.prototype.scripts = function() {
   if(this.coffee) {
     this.copy('app/main.coffee', 'app/main.coffee');
-    this.copy('app/common.coffee', 'app/common.coffee');
     this.copy('.coffeelint', '.coffeelint');
   } else {
     this.copy('app/main.js', 'app/main.js');
-    this.copy('app/common.js', 'app/common.js');
     this.copy('.jshintrc', '.jshintrc');
   }
+  this.copy('app/config.js', 'app/config.js');
   this.copy('Gruntfile.js', 'Gruntfile.js');
 };
 
