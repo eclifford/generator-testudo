@@ -32,7 +32,7 @@ module.exports = {
       included: false
     },
     {
-      pattern: nconf.get('app:basePath') + '/**/*.{js,coffee,tmpl,json}',
+      pattern: nconf.get('app:basePath') + '/**/*.{js,coffee,html,tmpl,json}',
       included: false
     },
     {

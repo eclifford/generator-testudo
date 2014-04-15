@@ -35,6 +35,9 @@ module.exports = {
     files: ['modules/{,*/}/', 'modules/**/*.js']<% if(!coffee) { %>,
     tasks: nconf.get('app').linting ? ['newer:jshint:js', 'karma:unit:run'] : ['karma:unit:run'] <% } %>
   },
+  assets: {
+    files: ['modules/{,*/}/', 'modules/**/*.{html,tmpl}'],
+  },
   tests: {
     files: ['../test/**/*.{js,coffee}'],
     tasks: ['karma:unit:run']

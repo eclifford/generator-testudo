@@ -125,17 +125,15 @@ TestudoGenerator.prototype.scripts = function() {
 
 TestudoGenerator.prototype.tests = function() {
   if(this.coffee) {
-    this.copy('test/acceptance/step_definitions/sample.coffee', 'test/acceptance/step_definitions/sample.coffee');
     this.copy('test/acceptance/support/world.coffee', 'test/acceptance/support/world.coffee');
-    this.copy('test/unit/specs/sampleSpec.coffee', 'test/unit/specs/sampleSpec.coffee');
     this.copy('test/unit/runner.coffee', 'test/unit/runner.coffee');
   } else {
-    this.copy('test/acceptance/step_definitions/sample.js', 'test/acceptance/step_definitions/sample.js');
     this.copy('test/acceptance/support/world.js', 'test/acceptance/support/world.js');
-    this.copy('test/unit/specs/sampleSpec.js', 'test/unit/specs/sampleSpec.js');
     this.copy('test/unit/runner.js', 'test/unit/runner.js');
   }
-  this.copy('test/acceptance/features/sample.feature', 'test/acceptance/features/sample.feature');
+  this.directory('test/unit/specs/todos');
+  this.directory('test/acceptance/step_definitions/todos');
+  this.copy('test/acceptance/features/todos.feature', 'test/acceptance/features/todos.feature');
 };
 
 TestudoGenerator.prototype.module = function() {

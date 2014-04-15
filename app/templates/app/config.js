@@ -6,7 +6,7 @@
 require.config({
   baseUrl: '/',
   paths: {
-    jquery: 'vendor/bower_components/jquery/jquery',
+    jquery: 'vendor/bower_components/jquery/dist/jquery',
     bronson: 'vendor/bower_components/bronson/bronson',
     underscore: 'vendor/bower_components/underscore/underscore',
     backbone: 'vendor/bower_components/backbone/backbone',
