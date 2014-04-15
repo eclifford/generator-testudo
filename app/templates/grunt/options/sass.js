@@ -14,9 +14,9 @@ module.exports = {
   },
   dev: {
     expand: true,
-    cwd: nconf.get('app').basePath,
-    src: ['**/*.{scss,sass}', '!{vendor,_*}/**/*'],
-    dest: nconf.get('app').tempDir,
+    cwd: nconf.get('app:basePath'),
+    src: ['**/*.{scss,sass}'].concat(nconf.get('app:ignoredDirs')),
+    dest: nconf.get('app:tempDir'),
     ext: '.css'
   }
 };

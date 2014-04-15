@@ -14,7 +14,7 @@ module.exports = {
   dev: {
     expand: true,
     cwd: "app",
-    src: ["**/*.coffee", "!vendor/**/*.coffee"],
+    src: ["**/*.coffee"].concat(nconf.get('app:ignoredDirs')),
     dest: ".tmp",
     ext: ".js"
   }

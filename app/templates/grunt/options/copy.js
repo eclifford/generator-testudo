@@ -15,8 +15,8 @@ module.exports = {
   assets: {
     expand: true,
     dot: true,
-    cwd: nconf.get('app').basePath,
-    src: ['**/*', '!**/*.{coffee,scss,sass,feature,md,styl,jade}'],
-    dest: nconf.get('app').tempDir
+    cwd: nconf.get('app:basePath'),
+    src: '**/*.{' + nconf.get('app:staticAssets') + '}',
+    dest: nconf.get('app:tempDir')
   }
 };

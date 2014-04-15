@@ -13,14 +13,15 @@ var nconf = require('nconf');
 module.exports = {
   options: {
     basePath: './',
-    frameworks: ['requirejs', 'chai-sinon', 'chai-jquery', 'chai', 'mocha', 'jquery-1.8.3'],
-    reporters: ['progress'],
+    frameworks: ['requirejs', 'chai-sinon', 'chai-jquery', 'chai', 'mocha', 'jquery-2.1.0'],
+    reporters: ['progress', 'coverage'],
     preprocessors: {
-      "**/*.coffee": ["coffee"]
+      "**/*.coffee": ["coffee"],
+      "app/modules/**/*.{js,coffee}": ['coverage']
     },
     coverageReporter: {
       type: 'html',
-      dir: "/test/unit/output/coverage/"
+      dir: "test/unit/output/coverage/"
     },
     port: 9877,
     files: [{
@@ -32,7 +33,7 @@ module.exports = {
       included: false
     },
     {
-      pattern: nconf.get('app:basePath') + '/**/*.{js,coffee,html,tmpl,json}',
+      pattern: nconf.get('app:basePath') + '/**/*.{' + nconf.get('app:staticAssets') + '}',
       included: false
     },
     {
@@ -42,11 +43,11 @@ module.exports = {
   },
   unit: {
     background: true,
-    browsers: nconf.get('testing:unitBrowsers')
+    browsers: nconf.get('testing:unit:browsers')
   },
   single: {
     autoWatch: false,
     singleRun: true,
-    browsers: nconf.get('testing:unitBrowsers')
+    browsers: nconf.get('testing:unit:browsers')
   }
 };
