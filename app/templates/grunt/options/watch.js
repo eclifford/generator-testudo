@@ -19,14 +19,20 @@ module.exports = {
     livereload: nconf.get('server:livereload'),
     livereloadOnError: false
   },
-  
-  stylus: {
+  <% if(coffee) { %>coffee: {
+    files: ['modules/**/*.coffee', '*.coffee'],
+    tasks: nconf.get('app:linting') ? ['newer:coffeelint', 'newer:coffee:dev', 'karma:unit:run'] : ['newer:coffee:dev', 'karma:unit:run']
+  },<% } %>
+  <% if(includeStylus) { %>stylus: {
     files: ['assets/{,*/}/', 'assets/**/*.styl', 'modules/{,*/}/', 'modules/**/*.styl', '*.styl'],
     tasks: ['stylus:dev']
-  },
-  
+  },<% } %>
+  <% if(includeSASS) { %>sass: {
+    files: ['assets/{,*/}/', 'assets/**/*.{scss,sass}', 'modules/{,*/}/', 'modules/**/*.{scss,sass}', 'main.{scss,sass}'],
+    tasks: ['sass:dev']
+  },<% } %>
   js: {
-    files: ['modules/{,*/}/', 'modules/**/*.js'],
+    files: ['modules/**/*.js'],
     tasks: nconf.get('app').linting ? ['newer:jshint:js', 'karma:unit:run'] : ['karma:unit:run'] 
   },
   assets: {
