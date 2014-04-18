@@ -13,14 +13,14 @@ chaiAsPromised.transferPromiseness = wd.transferPromiseness
 World = (callback) ->
   @browser = remote
 
-  if nconf.get('testing').acceptanceLogging
+  if nconf.get('testing:acceptance:logging')
     @browser.on "status", (info) ->
       console.log info.cyan
 
     @browser.on "command", (meth, path, data) ->
       console.log " > " + meth.yellow, path.grey, data or ""
 
-  @browser.init({browserName: nconf.get('testing').acceptanceBrowser})
+  @browser.init({browserName: nconf.get('testing:acceptance:browser')})
     .nodeify(callback)
 
 exports.World = World

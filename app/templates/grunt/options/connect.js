@@ -14,20 +14,21 @@ var nconf = require('nconf');
 
 module.exports = {
   options: {
-    port: nconf.get('server').port,
-    livereload: nconf.get('server').livereload,
-    hostname: nconf.get('server').hostname
+    port: nconf.get('server:port'),
+    livereload: nconf.get('server:livereload'),
+    hostname: nconf.get('server:hostname')
   },
   dev: {
     options: {
-      open: nconf.get('server').open,
-      base: [nconf.get('app').tempDir, nconf.get('app').basePath]
+      open: nconf.get('server:open'),
+      base: [nconf.get('app:tempDir'), nconf.get('app:basePath')]
     }
   },
   dist: {
     options: {
-      open: nconf.get('server').open,
-      base: nconf.get('app').buildDir
+      livereload: false,
+      open: nconf.get('server:open'),
+      base: nconf.get('app:buildDir')
     }
   }
 };

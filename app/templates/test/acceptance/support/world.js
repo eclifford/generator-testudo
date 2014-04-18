@@ -12,7 +12,7 @@ chaiAsPromised.transferPromiseness = wd.transferPromiseness;
 
 var World = function(callback) {
   this.browser = remote;
-  if (nconf.get('testing').acceptanceLogging) {
+  if (nconf.get('testing:acceptance:logging')) {
     this.browser.on("status", function(info) {
       return console.log(info.cyan);
     });
@@ -21,7 +21,7 @@ var World = function(callback) {
     });
   }
   return this.browser.init({
-    browserName: nconf.get('testing').acceptanceBrowser
+    browserName: nconf.get('testing:acceptance:browser')
   }).nodeify(callback);
 };
 

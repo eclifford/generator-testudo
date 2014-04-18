@@ -1,3 +1,4 @@
+
 //
 // RequireJS Task
 // 
@@ -34,10 +35,10 @@ glob.sync("modules/**/main.{coffee,js}", {
 module.exports = {
   dist: {
     options: {
-      baseUrl: nconf.get('app').tempDir,
+      baseUrl: nconf.get('app:tempDir'),
       mainConfigFile: nconf.get('app:basePath') + "/config.js",
-      fileExclusionRegExp: new RegExp("tests/*"),
-      dir: nconf.get('app').buildDir,
+      fileExclusionRegExp: new RegExp("test/*"),
+      dir: nconf.get('app:buildDir'),
       skipDirOptimize: true,
       optimizeCss: 'none',
       removeCombined: true,

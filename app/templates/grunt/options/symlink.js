@@ -21,9 +21,9 @@ module.exports = {
     files: [
       {
         expand: true,
-        cwd: "" + (nconf.get('app').basePath) + "/vendor/bower_components",
+        cwd: "" + (nconf.get('app:basePath')) + "/vendor/bower_components",
         src: ['*'],
-        dest: "" + (nconf.get('app').tempDir) + "/vendor/bower_components"
+        dest: "" + (nconf.get('app:tempDir')) + "/vendor/bower_components"
       }
     ]
   }

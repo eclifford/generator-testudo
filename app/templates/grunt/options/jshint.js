@@ -11,8 +11,8 @@ module.exports = {
   js: {
     files: {
       src: [
-        nconf.get('app').basePath + '/modules/**/*.js',
-        nconf.get('app').basePath + '/*.js'
+        nconf.get('app:basePath') + '/modules/**/*.js',
+        nconf.get('app:basePath') + '/*.js'
       ]
     }
   }

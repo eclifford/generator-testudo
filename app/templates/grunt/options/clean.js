@@ -14,6 +14,6 @@ module.exports = {
   options: {
     force: true
   },
-  dist: [nconf.get('app').tempDir, nconf.get('app').buildDir],
-  dev: [nconf.get('app').tempDir]
+  dist: [nconf.get('app:tempDir'), nconf.get('app:buildDir')],
+  dev: [nconf.get('app:tempDir')]
 };

@@ -15,25 +15,19 @@ var nconf = require('nconf');
 module.exports = {
   options: {
     spawn: false,
-    cwd: nconf.get('app').basePath,
-    livereload: nconf.get('server').livereload,
+    cwd: nconf.get('app:basePath'),
+    livereload: nconf.get('server:livereload'),
     livereloadOnError: false
   },
-  <% if(coffee) { %>coffee: {
-    files: ['assets/{,*/}/', 'assets/**/*.coffee', 'modules/{,*/}/', 'modules/**/*.coffee', '*.coffee'],
-    tasks: nconf.get('app').linting ? ['newer:coffeelint', 'newer:coffee:dev', 'karma:unit:run'] : ['newer:coffee:dev', 'karma:unit:run']
-  },<% } %>
-  <% if(includeStylus) { %>stylus: {
+  
+  stylus: {
     files: ['assets/{,*/}/', 'assets/**/*.styl', 'modules/{,*/}/', 'modules/**/*.styl', '*.styl'],
     tasks: ['stylus:dev']
-  },<% } %>
-  <% if(includeSASS) { %>sass: {
-    files: ['assets/{,*/}/', 'assets/**/*.{scss,sass}', 'modules/{,*/}/', 'modules/**/*.{scss,sass}', 'main.{scss,sass}'],
-    tasks: ['sass:dev']
-  },<% } %>
+  },
+  
   js: {
-    files: ['modules/{,*/}/', 'modules/**/*.js']<% if(!coffee) { %>,
-    tasks: nconf.get('app').linting ? ['newer:jshint:js', 'karma:unit:run'] : ['karma:unit:run'] <% } %>
+    files: ['modules/{,*/}/', 'modules/**/*.js'],
+    tasks: nconf.get('app').linting ? ['newer:jshint:js', 'karma:unit:run'] : ['karma:unit:run'] 
   },
   assets: {
     files: ['modules/{,*/}/', 'modules/**/*.{html,tmpl}'],

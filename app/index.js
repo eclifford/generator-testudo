@@ -85,10 +85,10 @@ TestudoGenerator.prototype.app = function() {
   this.template('grunt/options/watch.js', 'grunt/options/watch.js');
   this.template('_package.json', 'package.json');
   this.template('_bower.json', 'bower.json');
-  this.copy('.htaccess', '.htaccess');
+  this.copy('app/.htaccess', 'app/.htaccess');
   this.copy('gitignore', '.gitignore');
   this.copy('.bowerrc', '.bowerrc');
-  this.copy('robots.txt', 'robot.txt');
+  this.copy('app/robots.txt', 'app/robot.txt');
 };
   
 TestudoGenerator.prototype.documentation = function() {

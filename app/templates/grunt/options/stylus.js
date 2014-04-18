@@ -14,9 +14,9 @@ var nconf = require('nconf');
 module.exports = {
   dev: {
     expand: true,
-    cwd: nconf.get('app').basePath,
-    src: ['**/*.styl', '!{vendor,_*}/**/*'],
-    dest: nconf.get('app').tempDir,
+    cwd: nconf.get('app:basePath'),
+    src: ['**/*.styl'].concat(nconf.get('app:ignoredDirs')),
+    dest: nconf.get('app:tempDir'),
     ext: '.css'
   }
 };

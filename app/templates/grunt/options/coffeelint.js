@@ -20,7 +20,7 @@ module.exports = {
   },
   dev: {
     files: {
-      src: ["" + (nconf.get('app').basePath) + "/**/*.coffee", "!node_modules/**/*.coffee"]
+      src: ["" + (nconf.get('app:basePath')) + "/**/*.coffee"].concat(nconf.get('app:ignoredDirs'))
     }
   }
 };

@@ -3,7 +3,9 @@
     "basePath": "app",
     "tempDir": ".tmp",
     "buildDir": "dist",
-    "linting": true
+    "linting": true,
+    "ignoredDirs": ["_/**/*", "!vendor/**/*", "!node_modules/**/*"],
+    "staticAssets": "js,jpg,gif,jpg,html,favicon,txt,htaccess"
   },
   "server": {
     "hostname": "localhost",
@@ -12,9 +14,13 @@
     "open": true
   },
   "testing": {
-    "unitBrowsers": ["PhantomJS"],
-    "acceptanceBrowser": "firefox",
-    "acceptanceLogging": true
+    "unit": {
+      "browsers": ["PhantomJS"]
+    },
+    "acceptance": {
+      "browser": "firefox",
+      "logging": true
+    }
   },
   "env": {
     "SELENIUM_VERSION": "2.39.0:f2391600481dd285002d04b66916fc4286ff70ce"
