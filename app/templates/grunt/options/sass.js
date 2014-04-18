@@ -10,7 +10,8 @@ var nconf = require('nconf');
 
 module.exports = {
   options: {
-    require: ['sass-globbing']
+    require: ['sass-globbing'],
+    compass: true
   },
   dev: {
     expand: true,
