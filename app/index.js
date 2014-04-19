@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
 var path = require('path');
+var spawn = require('child_process').spawn;
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 
@@ -14,8 +15,14 @@ util.inherits(TestudoGenerator, yeoman.generators.Base);
 
 TestudoGenerator.prototype.init = function init() {
   this.on('end', function () {
-    if (!this.options['skip-install']) {
+    if(!this.options['skip-install']) {
       this.installDependencies();
+
+      if(this.includeSASS) {
+        spawn('bundle', ['install'], {cwd: this.projectDir}).stdout.on('data', function(data) {
+          console.log(data.toString());
+        });
+      }
     }
   });
 };
@@ -88,7 +95,7 @@ TestudoGenerator.prototype.app = function() {
   this.copy('app/.htaccess', 'app/.htaccess');
   this.copy('gitignore', '.gitignore');
   this.copy('.bowerrc', '.bowerrc');
-  this.copy('app/robots.txt', 'app/robot.txt');
+  this.copy('app/robots.txt', 'app/robots.txt');
 };
   
 TestudoGenerator.prototype.documentation = function() {
