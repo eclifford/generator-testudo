@@ -1,6 +1,6 @@
 {
   "name": "generator-testudo",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Testudo is a Grunt based boilerplate for the building of modern, modular, testable web applications",
   "license": "MIT",
   "main": "app/index.js",
@@ -22,7 +22,7 @@
     "testudo": "./bin/testudo.js"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "node_modules/mocha/bin/mocha --reporter spec"
   },
   "dependencies": {
     "yeoman-generator": "~0.16.0",
@@ -34,7 +34,7 @@
     "generator-mocha": ">=0.1.0",
     "grunt-cli": ">=0.1.13"
   },
-  "devDepedencies": {
+  "devDependencies": {
     "mocha": "*"
   },
   "engines": {
