@@ -22,7 +22,7 @@
     "testudo": "./bin/testudo.js"
   },
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha --reporter spec"
+    "test": "mocha --reporter spec"
   },
   "dependencies": {
     "yeoman-generator": "~0.16.0",
