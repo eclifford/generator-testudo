@@ -1,6 +1,6 @@
 {
   "name": "generator-testudo",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Testudo is a Grunt based boilerplate for the building of modern, modular, testable web applications",
   "license": "MIT",
   "main": "app/index.js",
