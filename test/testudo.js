@@ -5,13 +5,16 @@ var helpers = require('yeoman-generator').test;
 
 describe('testudo generators', function () {
 
-  beforeEach(function (done) {
-    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
-      if (err) {
-        return done(err);
-      }
-      done();
-    }.bind(this));
+  beforeEach(function(done) {
+    // TODO: without timeout .yc-json throws ENOTEMPTY error as it's being created/deleted at same time
+    setTimeout(function() {
+      helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+        if (err) {
+          return done(err);
+        }
+        done();
+      });
+    }, 100);
   });
 
   describe("testudo:app", function() {
@@ -119,8 +122,8 @@ describe('testudo generators', function () {
         done();
       });
     });
-  });
 
+  });
   describe("testudo:module", function() {
     beforeEach(function() {
       this.module = helpers.createGenerator('testudo:module', ['../../module'], ['foo']);
@@ -128,7 +131,7 @@ describe('testudo generators', function () {
 
     it("should generate module in CoffeeScript and SASS", function(done) {
       this.module.config.set('coffee', true);
-      // this.module.config.set('sass', true);
+      this.module.config.set('sass', true);
 
       this.module.run({}, function() {
         helpers.assertFiles([
@@ -141,20 +144,20 @@ describe('testudo generators', function () {
 
     it("should generate module in CoffeeScript and Stylus", function(done) {
       this.module.config.set('coffee', true);
-      // this.module.config.set('stylus', true);
+      this.module.config.set('stylus', true);
 
       this.module.run({}, function() {
         helpers.assertFiles([
           'app/modules/Foo/main.coffee',
-          'app/modules/Foo/main.scss'
+          'app/modules/Foo/main.styl'
         ]);
         done();
       });
     });
     
     it("should generate module in JavaScript and SASS", function(done) {
-      // this.module.config.set('coffee', false);
-      // this.module.config.set('stylus', true);
+      this.module.config.set('coffee', false);
+      this.module.config.set('sass', true);
 
       this.module.run({}, function() {
         helpers.assertFiles([
@@ -166,16 +169,17 @@ describe('testudo generators', function () {
     });
 
     it("should generate module in JavaScript and Stylus", function(done) {
-      // this.module.config.set('coffee', false);
-      // this.module.config.set('stylus', true);
+      this.module.config.set('coffee', false);
+      this.module.config.set('stylus', true);
 
       this.module.run({}, function() {
         helpers.assertFiles([
           'app/modules/Foo/main.js',
-          'app/modules/Foo/main.scss'
+          'app/modules/Foo/main.styl'
         ]);
         done();
       });
     });
+
   });
 });
