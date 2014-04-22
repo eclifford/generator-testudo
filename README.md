@@ -1,4 +1,4 @@
-# Testudo
+# Testudo [![Build Status](https://travis-ci.org/eclifford/generator-testudo.svg?branch=master)](https://travis-ci.org/eclifford/generator-testudo)
 
 ![Testudo](http://gb.fotolibra.com/images/previews/50037-roman-soldiers-in-testudo-formation-illustration.jpeg)
 
