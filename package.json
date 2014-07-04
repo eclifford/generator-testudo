@@ -1,6 +1,6 @@
 {
   "name": "generator-testudo",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "Testudo is a Grunt based boilerplate for the building of modern, modular, testable web applications",
   "license": "MIT",
   "repository": "eclifford/generator-testudo",
